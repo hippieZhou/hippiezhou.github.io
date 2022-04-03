@@ -4,20 +4,17 @@ const About = () => {
   return (
     <Layout>
       <img
-        style={{
-          height: "auto",
-        }}
+        style={{ borderRadius: "50%", width: 260, height: 260 }}
         alt="hippieZhou"
-        width="260"
-        height="260"
-        class="avatar avatar-user width-full border color-bg-default"
         src="https://avatars.githubusercontent.com/u/13598361?v=4"
       ></img>
       <br />
-      <code>
-        hi, my name is QiangZhou, you can call me @hippieZhou. I'm a .NET
-        developer and currently work at @Thoughtworks.
-      </code>
+      <p>
+        hi, my name is <b>QiangZhou</b>, you can call me
+        <code> hippie</code>. I'm a <code>.NET developer</code> and currently
+        work at
+        <b> @Thoughtworks</b>.
+      </p>
     </Layout>
   );
 };
