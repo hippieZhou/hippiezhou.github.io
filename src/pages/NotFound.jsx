@@ -1,7 +1,9 @@
+import Layout from "../Layout";
+
 const NotFound = () => (
-  <div className="not-found">
+  <Layout>
     <h2>Not Found Page</h2>
-  </div>
+  </Layout>
 );
 
 export default NotFound;

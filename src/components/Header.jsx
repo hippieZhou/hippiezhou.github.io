@@ -2,7 +2,7 @@ import github from "../images/github.png";
 import twitter from "../images/twitter.png";
 import about from "../images/about.png";
 import feed from "../images/feed.png";
-const Header = (props: any) => {
+const Header = (props) => {
   const { author } = props;
   return (
     <>
