@@ -4,15 +4,9 @@ self.addEventListener("fetch", (event) => {
   event.respondWith(
     caches.open("cache").then(async (cache) => {
       const response = await cache.match(event.request);
-      console.log("cache request: " + event.request.url);
       var fetchPromise = fetch(event.request).then(
         (networkResponse) => {
-          console.log("fetch completed: " + event.request.url, networkResponse);
           if (networkResponse) {
-            console.debug(
-              "updated cached page: " + event.request.url,
-              networkResponse
-            );
             cache.put(event.request, networkResponse.clone());
           }
           return networkResponse;
