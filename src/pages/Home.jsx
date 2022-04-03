@@ -1,6 +1,6 @@
 import Layout from "../Layout";
 
-const App = () => {
+const Home = () => {
   const articles = [
     {
       date: "Dec 20, 2015",
@@ -51,4 +51,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Home;
