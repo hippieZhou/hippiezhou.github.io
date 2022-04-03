@@ -2,6 +2,7 @@ import github from "../images/github.png";
 import twitter from "../images/twitter.png";
 import about from "../images/about.png";
 import feed from "../images/feed.png";
+import { Link } from "react-router-dom";
 const Header = (props) => {
   const { author } = props;
   return (
@@ -24,9 +25,9 @@ const Header = (props) => {
         >
           <img src={github} alt="github"></img>
         </a>
-        <a href="/about" rel="noreferrer">
+        <Link to="/about" rel="noreferrer">
           <img src={about} alt="about"></img>
-        </a>
+        </Link>
         <a href="/atom.xml" target="_blank">
           <img src={feed} alt="feed"></img>
         </a>
