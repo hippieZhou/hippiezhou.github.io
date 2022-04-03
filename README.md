@@ -4,6 +4,9 @@
 
 </div>
 
+[![Github Action](https://github.com/hippiezhou/hippiezhou.github.io/actions/workflows/github-pages.yml/badge.svg?branch=main)](https://github.com/hippiezhou/hippiezhou.github.io/actions/workflows/github-pages.yml/badge.svg?branch=main)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 ## Reference
 
 - [blog.evanyou.me/](https://blog.evanyou.me)

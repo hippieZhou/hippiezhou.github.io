@@ -3,34 +3,9 @@ import Layout from "../Layout";
 const Home = () => {
   const articles = [
     {
-      date: "Dec 20, 2015",
-      href: "2015/12/20/vuejs-2015-in-review/",
-      title: "Vue.js: 2015 in Review",
-    },
-    {
-      date: "Dec 20, 2015",
-      href: "2015/12/20/vuejs-2015-in-review/",
-      title: "Vue.js: 2015 in Review",
-    },
-    {
-      date: "Dec 20, 2015",
-      href: "2015/12/20/vuejs-2015-in-review/",
-      title: "Vue.js: 2015 in Review",
-    },
-    {
-      date: "Dec 20, 2015",
-      href: "2015/12/20/vuejs-2015-in-review/",
-      title: "Vue.js: 2015 in Review",
-    },
-    {
-      date: "Dec 20, 2015",
-      href: "2015/12/20/vuejs-2015-in-review/",
-      title: "Vue.js: 2015 in Review",
-    },
-    {
-      date: "Dec 20, 2015",
-      href: "2015/12/20/vuejs-2015-in-review/",
-      title: "Vue.js: 2015 in Review",
+      date: "Arp 03, 2022",
+      href: "2022/03/02/coming-soon/",
+      title: "Intro: Hello world",
     },
   ];
   return (
