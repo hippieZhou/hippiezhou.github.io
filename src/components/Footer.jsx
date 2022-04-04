@@ -10,7 +10,7 @@ const Footer = () => {
         alt="https://opensource.org/licenses/MIT"
         src="https://img.shields.io/badge/License-MIT-yellow.svg"
       ></img>
-      <p>Copyright © {new Date().getFullYear()} hippieZhou </p>
+      <p>Copyright © {new Date().getFullYear()} Share the ❤️ via hippieZhou </p>
     </footer>
   );
 };
