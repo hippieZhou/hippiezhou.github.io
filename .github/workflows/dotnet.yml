@@ -34,7 +34,7 @@ jobs:
         with:
           node-version: '16.13.0'
       - run: npm install
-        working-directory: ./Web
+        working-directory: ./src
         
       # Restore Dependencies
       - name: Restore dependencies
@@ -54,7 +54,7 @@ jobs:
         
       # Build Project
       - name: Build Solution
-        run: dotnet build ./ILoveDotNet.sln --configuration Release --no-restore
+        run: dotnet build ./Blazor.sln --configuration Release --no-restore
       
       # Install dotnet report generator
       - name: Install .NET Report Generator
@@ -103,7 +103,7 @@ jobs:
         with:
           node-version: '16.13.0'
       - run: npm install
-        working-directory: ./Web
+        working-directory: ./src
 
       # Restore Dependencies
       - name: Restore dependencies
