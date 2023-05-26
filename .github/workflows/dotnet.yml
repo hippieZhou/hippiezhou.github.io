@@ -47,29 +47,6 @@ jobs:
       # Build Project
       - name: Build Solution
         run: dotnet build ./BlazorApp.sln --configuration Release --no-restore
-      
-      # Install dotnet report generator
-      - name: Install .NET Report Generator
-        run: dotnet tool install -g dotnet-reportgenerator-globaltool
-        
-      # Run Tests
-      # - name: Run Test
-      #  run: dotnet test --configuration Release --no-build --verbosity normal --collect:"XPlat Code Coverage"
-      
-      # Generate Test Report
-      # - name: Generate Test Report
-      #  run: reportgenerator -reports:./**/Coverage.cobertura.xml -targetdir:"./Test/Report" -reporttypes:Html
-      
-      # Upload Test Report
-      # - name: Upload Test Result
-      #   uses: actions/upload-artifact@v3
-      #   with:
-      #     name: ilovedotnet-test-report
-      #     path: ./Test/Report
-      #     retention-days: 3
-      
-      # Use always() to always run this step to publish test results when there are test failures
-      #  if: ${{ always() }}
   
   deploy:
     needs: build-and-test
@@ -89,14 +66,6 @@ jobs:
       - name: Install .NET WASM Build Tools
         run: dotnet workload install wasm-tools
 
-      # Install Node JS
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16.13.0'
-      # - run: npm install
-      #   working-directory: ./src
-
       # Restore Dependencies
       - name: Restore dependencies
         run: dotnet restore
@@ -114,4 +83,4 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
-          FOLDER: dist/Web/wwwroot
+          FOLDER: dist/wwwroot
