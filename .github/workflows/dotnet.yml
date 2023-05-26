@@ -94,8 +94,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '16.13.0'
-      - run: npm install
-        working-directory: ./src
+      # - run: npm install
+      #   working-directory: ./src
 
       # Restore Dependencies
       - name: Restore dependencies
