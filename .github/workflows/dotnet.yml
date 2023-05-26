@@ -27,14 +27,6 @@ jobs:
       # Install dotnet wasm buildtools workload
       - name: Install .NET WASM Build Tools
         run: dotnet workload install wasm-tools
-          
-      # Install Node JS
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16.13.0'
-      - run: npm install
-        working-directory: ./src
         
       # Restore Dependencies
       - name: Restore dependencies
