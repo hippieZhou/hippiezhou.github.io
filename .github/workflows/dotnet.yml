@@ -1,0 +1,125 @@
+name: build and test and deploy
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  schedule:
+      # Runs every sunday 05.00 PM UTC (22.30 PM IST Equivalent). Pattern - "*(0-59 minute) *(0-23 hour) *(1-31 day of the month) *(1-12 month) *(0-6 day of the week)"
+      - cron: '0 17 * * 0'
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout the code
+      - uses: actions/checkout@v3.4.0
+
+      # Install .NET Core SDK
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 7.0.x
+          
+      # Install dotnet wasm buildtools workload
+      - name: Install .NET WASM Build Tools
+        run: dotnet workload install wasm-tools
+          
+      # Install Node JS
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16.13.0'
+      - run: npm install
+        working-directory: ./Web
+        
+      # Restore Dependencies
+      - name: Restore dependencies
+        run: dotnet restore
+        
+      # Check Vulnerable Nuget Packages
+      - name: Checking Vulnerable Nuget Packages
+        run: dotnet list package --vulnerable --include-transitive
+        
+      # Check Outdated Nuget Packages
+      - name: Checking Outdated Nuget Packages
+        run: dotnet list package --outdated --include-transitive
+        
+       # Check Deprecated Nuget Packages
+      - name: Checking Deprecated Nuget Packages
+        run: dotnet list package --deprecated --include-transitive
+        
+      # Build Project
+      - name: Build Solution
+        run: dotnet build ./ILoveDotNet.sln --configuration Release --no-restore
+      
+      # Install dotnet report generator
+      - name: Install .NET Report Generator
+        run: dotnet tool install -g dotnet-reportgenerator-globaltool
+        
+      # Run Tests
+      - name: Run Test
+        run: dotnet test --configuration Release --no-build --verbosity normal --collect:"XPlat Code Coverage"
+      
+      # Generate Test Report
+      - name: Generate Test Report
+        run: reportgenerator -reports:./**/Coverage.cobertura.xml -targetdir:"./Test/Report" -reporttypes:Html
+      
+      # Upload Test Report
+      - name: Upload Test Result
+        uses: actions/upload-artifact@v3
+        with:
+          name: ilovedotnet-test-report
+          path: ./Test/Report
+          retention-days: 3
+      
+      # Use always() to always run this step to publish test results when there are test failures
+        if: ${{ always() }}
+  
+  deploy:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    if: ${{ github.actor != 'dependabot[bot]' }}
+    steps:
+      # Checkout the code
+      - uses: actions/checkout@v3.4.0
+
+      # Install .NET Core SDK
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 7.0.x
+
+      # Install dotnet wasm buildtools workload
+      - name: Install .NET WASM Build Tools
+        run: dotnet workload install wasm-tools
+
+      # Install Node JS
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16.13.0'
+      - run: npm install
+        working-directory: ./Web
+
+      # Restore Dependencies
+      - name: Restore dependencies
+        run: dotnet restore
+
+      # Build Project
+      - name: Build
+        run: dotnet build ./BlazorApp.sln --configuration Release --no-restore
+        
+      # Publishes Blazor project to the release-folder
+      - name: Publish .NET Core Project
+        run: dotnet publish src/BlazorApp/BlazorApp.csproj -c:Release -p:GHPages=true --no-restore -o dist/Web --nologo
+        
+      - name: Commit wwwroot to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: dist/Web/wwwroot
