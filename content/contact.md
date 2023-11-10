@@ -51,6 +51,28 @@ public sealed class About : Me
 }
 ```
 
+## Experience
+
+- Consultant / 2022 — Present
+
+  > As a consultant in Thoughtworks, mainly committed to the transformation and upgrading of outdated systems.
+
+- .NET Backend Developer / 2019 — 2022
+
+  > From Beijing to Wuhan, I worked as a developer for two companies and accumulated a lot of experience in .net core development.
+
+- WPF Developer / 2016 — 2019
+
+  > Worked as a WPF developer in a traditional company, mainly engaged in the research and development of video surveillance related products.
+
+- UAP Developer / 2015 — 2016
+
+  > Work as an intern in a game company in Wuhan and accumulate work experience
+
+- AnYang Normal University / 2012 — 2016
+
+  > Major in software engineering with bachelor's degree
+
 you can contact me with [hippiezhou@outlook.com](mailto:hippiezhou@outlook.com), it's welcome.
 
 <div>
