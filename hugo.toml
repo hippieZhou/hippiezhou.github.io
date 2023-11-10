@@ -1,0 +1,59 @@
+baseURL = 'https://hippiezhou.dev/'
+author = "hippiezhou"
+copyright = "Copyright © 2008–2023; all rights reserved."
+title = 'hippiezhou.dev'
+paginate = 3
+languageCode = 'en-us'
+defaultContentLanguage = "en"
+enableInlineShortcodes = true
+
+theme = "paper"
+
+[params]
+  color = 'linen'      
+
+  name = 'hippiezhou'
+  twitter = 'hippie_zhou'             
+  github = 'hippieZhou'  
+  avatar = 'https://github.com/hippiezhou.png'             
+  bio = 'software engineer at Thoughtworks.'
+  rss = true   
+
+# needed to load local images to md files
+[[module.mounts]]
+source = 'static'
+target = 'static'
+
+[[module.mounts]]
+source = 'images'
+target = 'static/images'
+
+# needed to  render raw HTML (e.g. <sub>, <sup>, <kbd>, <mark>)
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    lineNos = true
+
+[menu]
+  [[menu.main]]
+    identifier = "apps"
+    name = "Apps"
+    url = "/apps/"
+    weight = 10
+  [[menu.main]]
+    identifier = "archives"
+    name = "Archives"
+    url = "/archives/"
+    weight = 10
+  [[menu.main]]
+    identifier = "contact"
+    name = "Contact"
+    url = "/contact/"
+    weight = 10
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"
