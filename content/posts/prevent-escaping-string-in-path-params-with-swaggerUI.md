@@ -1,5 +1,5 @@
 +++
-title = 'Prevent Escaping String in Path Params With SwaggerUI'
+title = 'Prevent escaping string in path params with swaggerUI'
 date = 2023-11-10T20:33:37+08:00
 tags = ["backend"]
 draft = false
