@@ -1,10 +1,8 @@
 +++
 title = 'How to setup my personal site with Hugo'
 date = 2023-11-10T15:06:42+08:00
-description = "Lorem Ipsum Dolor Si Amet" 
 tags = [ "frontend"] 
-weight = 10 
-draft = true
+draft = false
 +++
 
 ## Introduction
