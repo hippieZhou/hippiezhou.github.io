@@ -6,4 +6,4 @@ draft = true
 
 ## [Attention For UWP](https://apps.microsoft.com/detail/attention-for-uwp/9NC82MFX4BTZ)
 
-![Attention For UWP](/images/attention-for-uwp.png)
+![Attention For UWP](/images/apps/attention-for-uwp.png)
