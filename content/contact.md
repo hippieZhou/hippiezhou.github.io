@@ -73,7 +73,7 @@ public sealed class About : Me
 
   > Major in software engineering with bachelor's degree
 
-you can contact me with [hippiezhou@outlook.com](mailto:hippiezhou@outlook.com), it's welcome.
+you can contact with me[[hippiezhou@outlook.com](mailto:hippiezhou@outlook.com)], it's welcome.
 
 <div>
 
