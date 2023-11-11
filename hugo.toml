@@ -43,11 +43,6 @@ target = 'static/images'
     url = "/apps/"
     weight = 10
   [[menu.main]]
-    identifier = "archives"
-    name = "Archives"
-    url = "/archives/"
-    weight = 10
-  [[menu.main]]
     identifier = "contact"
     name = "Contact"
     url = "/contact/"
