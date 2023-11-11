@@ -25,7 +25,7 @@ public class HelloWorldController : ControllerBase
 
 ```
 
-![Prevent Escaping String in Path Params With SwaggerUI](/images/posts/Snipaste_2023-11-10_21-15-29.png)
+![Prevent Escaping String in Path Params With SwaggerUI](/images/posts/snipaste_2023-11-10_21-15-29.png)
 
 we can find the same issue on github: [Prevent escaping html in path params? ](https://github.com/swagger-api/swagger-ui/issues/1637)
 
