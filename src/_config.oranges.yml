@@ -193,18 +193,18 @@ footer:
       -
         enable: true
         id: busuanzi_value_site_pv
-        name: 本站总访问量
-        unit: 次
+        name: sv：
+        unit:
       -
         enable: true
         id: busuanzi_value_page_pv
-        name: 本文总阅读量
-        unit: 次
+        name: pv：
+        unit:
       -
         enable: true
         id: busuanzi_value_site_uv
-        name: 本站访客数
-        unit: 人
+        name: uv：
+        unit:
 
 # 文章搜索
 search:
