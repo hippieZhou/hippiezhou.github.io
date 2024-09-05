@@ -3,9 +3,9 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 'HZ'
-subtitle: 'record my daily life and work'
-description: ''
+title: hippie
+subtitle: 
+description: 
 keywords:
 author: hippieZhou
 language: en
@@ -102,5 +102,5 @@ theme: oranges
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/hippieZhou/hippiezhou.dev
+  repo: https://github.com/hippieZhou/hippiezhou.github.io
   branch: main

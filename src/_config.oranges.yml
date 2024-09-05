@@ -27,7 +27,7 @@ favicon:
 # 用户头像与昵称
 avatar:
   author_photo: /images/avatar.png
-  author_nickname: hippiezhou
+  author_nickname: hippie Zhou
   path: /
 
 # Google 分析
