@@ -1,5 +1,5 @@
 ---
-title: How to enabl SSH service on Ubuntu
+title: How to enable SSH service on Ubuntu
 date: 2021-10-17 12:43:22
 tags: SSH
 ---
