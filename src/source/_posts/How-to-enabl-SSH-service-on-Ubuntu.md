@@ -40,11 +40,17 @@ ssh 的配置文件默认在
 
 使用方式 直接在终端输入：
 
-```bash
-ssh ip
+```bash  
+# 以 root 身份登陆
+ssh root@[your-remote-ip]
 ```
 
 然后跳出来的授权验证，输入用户名和密码即可。
 
-当然，为了方便等了，你可以在你的 `~/.zshrc` 配置相关 alias，比如想像这样: `alias login-dev="ssh root@[your-remote-ip]"`。
+当然，为了方便等了，你可以在你的 `~/.zshrc` 配置相关 alias，比如像这样:
+
+```bash
+alias login-dev="ssh root@[your-remote-ip]"
+```
+
 配置完成后执行一下 `source ~/.zshrc` 让配置生效，这样你就可以直接是 _login-dev_ 进行快速登陆。
