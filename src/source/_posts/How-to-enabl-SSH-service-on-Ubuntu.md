@@ -47,7 +47,7 @@ ssh root@[your-remote-ip]
 
 然后跳出来的授权验证，输入用户名和密码即可。
 
-当然，为了方便等了，你可以在你的 `~/.zshrc` 配置相关 alias，比如像这样:
+当然，为了方便登陆，你可以在你的 `~/.zshrc` 配置相关 alias，比如像这样:
 
 ```bash
 alias login-dev="ssh root@[your-remote-ip]"
