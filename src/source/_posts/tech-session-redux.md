@@ -100,7 +100,7 @@ function App() {
 export default App;
 ```
 
-# 安装
+## 安装
 
 ```bash
 # Redux + Plain JS template
@@ -119,7 +119,7 @@ install devtools for dev
 npm install --save-dev redux-devtools
 ```
 
-# 自定义 Reducer 包装类
+## 自定义 Reducer 包装类
 
 ```js
 // src/store/createReducer.js
@@ -135,7 +135,7 @@ const createReducer =
 export default createReducer;
 ```
 
-# 自定义全局 Store 包装类
+## 自定义全局 Store 包装类
 
 ```js
 // src/store/Store.js
@@ -174,7 +174,7 @@ class Store {
 export default Store;
 ```
 
-# 定义模块 Reducer
+## 定义模块 Reducer
 
 ```js
 // src/features/counter/CounterIntents.js
@@ -210,7 +210,7 @@ const CounterReducer = createReducer(getDefaultState(), handlers);
 export default CounterReducer;
 ```
 
-# 定义模块 Dispatcher
+## 定义模块 Dispatcher
 
 ```js
 // src/features/counter/createCounterDispatcher.js
@@ -231,7 +231,7 @@ const createCounterDispatcher = (store) => ({
 export default createCounterDispatcher;
 ```
 
-# UI 界面构建
+## UI 界面构建
 
 ```js
 // src/features/counter/components/Counter.js
