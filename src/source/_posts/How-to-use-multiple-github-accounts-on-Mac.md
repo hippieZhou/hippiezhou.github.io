@@ -4,7 +4,7 @@ date: 2024-09-06 09:21:42
 tags: CLI
 ---
 
-> we may need multiple github accounts in our dialy work, so I want to introduce a easy way to config multiple accounts on our Mac machine.
+> we may need multiple github accounts in our daily work, so I want to introduce a easy way to config multiple accounts on our Mac machine.
 
 # Create SSH keys for all accounts
 
