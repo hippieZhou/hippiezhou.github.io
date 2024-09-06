@@ -1,6 +1,6 @@
 ---
 title: How to keep payload process in ASP.NET Core consistent with ASP.NET
-date: 2024-09-06 22:15:59
+date: 2026-07-25 22:15:59
 tags: ASP.NET Core
 ---
 
