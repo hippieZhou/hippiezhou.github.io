@@ -29,7 +29,7 @@ As a consultant in thoughtworks, mainly committed to the transformation and upgr
 
 > .NET Backend Developer
 
-I work in ERP system development at a software company in the real estate industry. During my time here, I've mainly focused on .NET-related client-side and server-side development, and have accumulated a significant amount of relevant experience.
+I worked in ERP system development at a software company in the real estate industry. During my time here, I've mainly focused on .NET-related client-side and server-side development, and have accumulated a significant amount of relevant experience.
 
 ---
 
@@ -51,4 +51,4 @@ Worked as an intern in a game company in Wuhan and accumulate work experience.
 
 # Education
 
-- 2012—2016: Anyang Normal University / Software Engineering / Master.
+- 2012—2016: Anyang Normal University / Software Engineering / Bachelor.

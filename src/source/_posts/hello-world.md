@@ -1,6 +1,6 @@
 ---
 title: Hello World
-date: 2016-10-17 12:43:22
+date: 2016-07-01 12:43:22
 tag: Frontend
 ---
 
@@ -60,6 +60,8 @@ More info: [Writing](https://hexo.io/docs/writing.html)
 ### Run server
 
 ```bash
+$ hexo s
+# or
 $ hexo server
 ```
 

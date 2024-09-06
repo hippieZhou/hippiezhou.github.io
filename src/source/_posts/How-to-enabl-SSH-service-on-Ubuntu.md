@@ -4,9 +4,9 @@ date: 2021-10-17 12:43:22
 tags: SSH
 ---
 
-> 有时候需要远程登陆 ubuntu 的终端，那么可以使用 ssh 来实现，ubuntu 好像默认没有安装 ssh 的，需要自己手动安装。
+> 有时候需要远程登陆 ubuntu 的终端，那么可以使用 ssh 来实现。但是 ubuntu 好像默认没有安装 ssh，因此需要自己手动安装。
 
-ssh 分为客户端 openssh-client 和 openssh-server，可根据需要进行安装客户端和服务端
+ssh 分为客户端 openssh-client 和 openssh-server，可根据需要进行安装客户端和服务端。
 
 客户端：
 
@@ -53,4 +53,4 @@ ssh root@[your-remote-ip]
 alias login-dev="ssh root@[your-remote-ip]"
 ```
 
-配置完成后执行一下 `source ~/.zshrc` 让配置生效，这样你就可以直接是 _login-dev_ 进行快速登陆。
+配置完成后执行一下 `source ~/.zshrc` 让配置生效，这样你就可以直接是 **login-dev** 进行快速登陆。
