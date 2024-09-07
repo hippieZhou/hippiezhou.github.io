@@ -46,6 +46,8 @@ catch (Exception e)
 - 修改返回类型为强类型，取消匿名类型
 - 添加 InternalsVisibleTo 属性，让 Internal 级别的对象对外暴露（如下图所示）
 
+![Csprpj](/images/how-to-fix-runtimebinderexception/749711-20230413210950528-233699530.png)
+
 # 相关参考
 
 - [C# ‘dynamic’ cannot access properties from anonymous types declared in another assembly](https://stackoverflow.com/questions/2630370/c-sharp-dynamic-cannot-access-properties-from-anonymous-types-declared-in-anot)
