@@ -36,6 +36,13 @@ mv src/.github/ .
 mv src/.gitignore .
 ```
 
+try to use `setup.sh` to setup:
+
+```bash
+chmod +x setup.sh
+./setup.sh
+```
+
 ### apply third party theme
 
 ```bash
