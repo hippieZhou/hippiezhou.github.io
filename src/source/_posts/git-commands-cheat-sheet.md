@@ -4,6 +4,8 @@ date: 2022-02-27 20:55:55
 tags: Git
 ---
 
+
+# Handbook
 ```bash
 # Initialize a new git repository:
 git init
@@ -89,3 +91,17 @@ git stash apply
 # Fetch all remote branches, delete branch if upstream is gone
 git fetch --all --prune
 ```
+
+# Errors
+
+## Fix "ssh: connect to host github.com port 22: Connection timed out"
+
+try to create or update `~/.ssh/config` as followed:
+
+```shell
+Host github.com
+ Hostname ssh.github.com
+ Port 443
+```
+
+Then, run the command `ssh -T git@github.com` to confirm if the issue is fixed.
