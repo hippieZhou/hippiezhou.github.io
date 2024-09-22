@@ -4,7 +4,7 @@ date: 2024-09-22 21:40:01
 tags: WinUI3
 ---
 
-> 在 WinUI3 中新增的 **ItemsView** 控件本身不支持 `IncrementalLoading` 进行增量加载，本文通过实现一个自定关于的 Behavior 方式来解决这个问题。
+> 在 WinUI3 中新增的 **ItemsView** 控件本身不支持 `IncrementalLoading` 进行增量加载，本文通过实现一个自定义的 Behavior 方式来解决这个问题。
 
 # ItemSource 的定义
 
@@ -42,6 +42,24 @@ public class PeopleSource : IIncrementalSource<Person>
     }
 }
 
+
+// ViewModel.cs
+public Items { get; private set; } = new IncrementalLoadingCollection<PeopleSource, Person>();
+
+[RelayCommand]
+private async Task OnLoadMoreItemsAsync()
+{
+    if (Items != null && Items.IsLoading == false)
+    {
+        await Items.LoadMoreItemsAsync(10);
+    }
+}
+
+[RelayCommand]
+private void OnItemInvoked(ItemsViewItemInvokedEventArgs invokedItem)
+{
+    var selected = invokedItem.InvokedItem as Person;
+}
 ```
 
 # IncrementalLoadingBehavior 的实现
@@ -93,24 +111,6 @@ public class IncrementalLoadingBehavior : Behavior<ItemsView>
             LoadMoreItemsCommand?.Execute(null);
         }
     }
-}
-
-// ViewModel.cs
-public Items { get; private set; } = new IncrementalLoadingCollection<PeopleSource, Person>();
-
-[RelayCommand]
-private async Task OnLoadMoreItemsAsync()
-{
-    if (Items != null && Items.IsLoading == false)
-    {
-        await Items.LoadMoreItemsAsync(10);
-    }
-}
-
-[RelayCommand]
-private void OnItemInvoked(ItemsViewItemInvokedEventArgs invokedItem)
-{
-    var selected = invokedItem.InvokedItem as Person;
 }
 ```
 
