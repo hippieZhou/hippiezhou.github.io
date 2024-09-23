@@ -1,12 +1,13 @@
 ---
 title: How to keep payload process in ASP.NET Core consistent with ASP.NET
 date: 2023-07-25 22:15:59
+updated: 2023-07-25 22:15:59
 tags: ASP.NET Core
 ---
 
 # 问题背景
 
-最近主要做的一项工作是需要将 XXX Api 中 Engagements 相关的业务接口从 ASP.NET 框架迁移至 ASP.NET Core 中。得益于团队前期已经把基础依赖部分的实现代码都已经迁到到 netstandard2.0，所以 Controller 级别的接口迁移也就不需要很多工作量，基本就是修改一下路由定义和对应的返回值类型就差不多了。再把所有相关的 Controller 都迁移完之后按照团队的测试策略来讲的话，也就可以部署到 QA 环境进行测试。在第一轮的测试过程中，QA人员反馈测试相对比较顺利，没有发现什么明显的 bug。本以为能安心接着修改 Engagements 对应的测试，但是却突然收到了其他团队的反馈，说有一个接口出问题，错误日志如下图所示：
+最近主要做的一项工作是需要将 XXX Api 中 Engagements 相关的业务接口从  ASP.NET  框架迁移至  ASP.NET Core 中。得益于团队前期已经把基础依赖部分的实现代码都已经迁到到  netstandard2.0，所以 Controller 级别的接口迁移也就不需要很多工作量，基本就是修改一下路由定义和对应的返回值类型就差不多了。再把所有相关的 Controller 都迁移完之后按照团队的测试策略来讲的话，也就可以部署到 QA 环境进行测试。在第一轮的测试过程中，QA 人员反馈测试相对比较顺利，没有发现什么明显的 bug。本以为能安心接着修改 Engagements 对应的测试，但是却突然收到了其他团队的反馈，说有一个接口出问题，错误日志如下图所示：
 
 ![Error](/images/how-to-keep-payload-process-in-asp-net-core-consistent-with-asp-net/error01.png)
 
@@ -16,24 +17,24 @@ tags: ASP.NET Core
 
 ```C#
 # ASP.NET Core
-public class XXXServicesController : ControllerBase                                                               
-{                                                                                                                        
-    [HttpPut("fee/xxx/{engagementId}/services")]                                                                 
+public class XXXServicesController : ControllerBase
+{
+    [HttpPut("fee/xxx/{engagementId}/services")]
     public IActionResult Save([FromRoute]long engagementId, [FromBody] BatchUpdateEngagementTypeOfServiceRequest request)
-    {                                                                                                                    
-        return Ok(request);                                                                                              
-    }                                                                                                                   
+    {
+        return Ok(request);
+    }
 }
 
-# ASP.NET 
-public class EngagementServicesController : ApiController                                                
-{                                                                                                        
-    [HttpPut]                                                                                            
-    [Route("fee/xxx/{engagementId}/services")]                                                   
+# ASP.NET
+public class EngagementServicesController : ApiController
+{
+    [HttpPut]
+    [Route("fee/xxx/{engagementId}/services")]
     public HttpResponseMessage Save(long engagementId, BatchUpdateEngagementTypeOfServiceRequest request)
-    {                                                                                                    
-        return Request.CreateResponse(request);                                                          
-    }                                                                                                    
+    {
+        return Request.CreateResponse(request);
+    }
 }
 ```
 
@@ -60,10 +61,10 @@ Payload 参数如下所示：
       }
    ],
    "servicesToUpdate":[
-      
+
    ],
    "idsToBeDeleted":[
-      
+
    ]
 }
 ```
@@ -71,14 +72,14 @@ Payload 参数如下所示：
 发现在 payload 相同的情况下，传到 ASP.NET 中就可以正常解析，但是传到 APS.NET Core 中时就会导致转化 request 对象为 null，通过对比 payload 格式和定义的 DTO 差异，发现 actionRequiredLeadTime 后端实际定义的类型为 int? 类型，但是前端传递的值却是 N/A ，显然是类型不匹配导致的问题。为了让日志里面的错误更加具体，我在 ASP.NET Core 中将序列化异常的回调事件注册上：
 
 ```C#
-services.AddControllers().AddNewtonsoftJson(options =>                                                                                                                                          
-{                                                                                                                                                                        
-    options.SerializerSettings.Error += (sender, args) =>                                                                                                                
-    {                                                                                                                                                                    
-        var errorCtx = args.ErrorContext.Error;                                                                                                                          
-        LogManager.GetLogger(nameof(Program)).Log(LogLevel.Error, errorCtx, errorCtx.Message);                     
-        args.ErrorContext.Handled = false;                                                                                                                               
-    };                                                                                                                                                                                                                                                                                                    
+services.AddControllers().AddNewtonsoftJson(options =>
+{
+    options.SerializerSettings.Error += (sender, args) =>
+    {
+        var errorCtx = args.ErrorContext.Error;
+        LogManager.GetLogger(nameof(Program)).Log(LogLevel.Error, errorCtx, errorCtx.Message);
+        args.ErrorContext.Handled = false;
+    };
 });
 ```
 
@@ -94,7 +95,6 @@ services.AddControllers().AddNewtonsoftJson(options =>
 
 ![Controller Execute](/images/how-to-keep-payload-process-in-asp-net-core-consistent-with-asp-net/controllerexecute.png)
 
-
 通过上图我们可以看到，无论是 ASP.NET Core 还是 ASP.NET ，对于 payload 转后端对象的逻辑都是由 Model Binding 这一层来实现的，所以就需要这里面的不同实现，通过查看源码可以找出有这一段逻辑。
 
 # 解决方案
@@ -109,7 +109,7 @@ public class BatchUpdateEngagementTypeOfServiceRequestBinder : IModelBinder
     {
         this.logger = logger;
     }
-    
+
     public async Task BindModelAsync(ModelBindingContext bindingContext)
     {
         if (bindingContext == null)
@@ -170,23 +170,23 @@ public class CustomRequestEntityBinderProvider : IModelBinderProvider
 ```
 
 ```C#
-services.AddControllers(options =>                                                                                                                                    
-{                                                                                                                                                                                                                                                                                                         
-    options.OutputFormatters.RemoveType<StringOutputFormatter>();                                                                                                     
-    options.OutputFormatters.RemoveType<HttpNoContentOutputFormatter>();                                                                                              
-    options.ModelBinderProviders.Insert(0, new CustomRequestEntityBinderProvider());                                                                                  
-}).AddNewtonsoftJson(options =>                                                                                                                                       
-{                                                                                                                                                                     
-    options.SerializerSettings.Error += (sender, args) =>                                                                                                             
-    {                                                                                                                                                                 
-        var errorCtx = args.ErrorContext.Error;                                                                                                                       
-        LogManager.GetLogger(nameof(Program)).Log(LogLevel.Error, errorCtx, $"can not process request body with incorrect type:{errorCtx.Message}");                  
-        args.ErrorContext.Handled = false;                                                                                                                                                                                                                                                   
-    };                                                                                                                                                                                                                                                                                               
-});  
+services.AddControllers(options =>
+{
+    options.OutputFormatters.RemoveType<StringOutputFormatter>();
+    options.OutputFormatters.RemoveType<HttpNoContentOutputFormatter>();
+    options.ModelBinderProviders.Insert(0, new CustomRequestEntityBinderProvider());
+}).AddNewtonsoftJson(options =>
+{
+    options.SerializerSettings.Error += (sender, args) =>
+    {
+        var errorCtx = args.ErrorContext.Error;
+        LogManager.GetLogger(nameof(Program)).Log(LogLevel.Error, errorCtx, $"can not process request body with incorrect type:{errorCtx.Message}");
+        args.ErrorContext.Handled = false;
+    };
+});
 ```
 
-## 方案二：CustomValueTypeJsonConverter 
+## 方案二：CustomValueTypeJsonConverter
 
 ```C#
 # ValueTypeJsonConverter.cs
@@ -227,19 +227,19 @@ public class ValueTypeJsonConverter : JsonConverter
 ```
 
 ```C#
-services.AddControllers(options =>                                                                                                                                    
-{                                                                                                                                                                                                                                                                                                         
-    options.OutputFormatters.RemoveType<StringOutputFormatter>();                                                                                                     
-    options.OutputFormatters.RemoveType<HttpNoContentOutputFormatter>();                                                                                                                                                                              
-}).AddNewtonsoftJson(options =>                                                                                                                                       
-{   
-	  options.SerializerSettings.Converters.Add(new ValueTypeJsonConverter());                                                                                                                                                                  
-    options.SerializerSettings.Error += (sender, args) =>                                                                                                             
-    {                                                                                                                                                                 
-        var errorCtx = args.ErrorContext.Error;                                                                                                                       
-        LogManager.GetLogger(nameof(Program)).Log(LogLevel.Error, errorCtx, $"can not process request body with incorrect type:{errorCtx.Message}");                  
-        args.ErrorContext.Handled = true;                                                                                                                                                                                                                                                   
-    };                                                                                                                                                                                                                                                                                               
+services.AddControllers(options =>
+{
+    options.OutputFormatters.RemoveType<StringOutputFormatter>();
+    options.OutputFormatters.RemoveType<HttpNoContentOutputFormatter>();
+}).AddNewtonsoftJson(options =>
+{
+	  options.SerializerSettings.Converters.Add(new ValueTypeJsonConverter());
+    options.SerializerSettings.Error += (sender, args) =>
+    {
+        var errorCtx = args.ErrorContext.Error;
+        LogManager.GetLogger(nameof(Program)).Log(LogLevel.Error, errorCtx, $"can not process request body with incorrect type:{errorCtx.Message}");
+        args.ErrorContext.Handled = true;
+    };
 });
 ```
 

@@ -1,6 +1,7 @@
 ---
 title: Hello World
 date: 2016-07-01 12:43:22
+updated: 2016-07-01 12:43:22
 tag: Frontend
 ---
 
@@ -70,6 +71,8 @@ More info: [Writing](https://hexo.io/docs/writing.html)
 $ hexo s
 # or
 $ hexo server
+# or
+hexo clean && hexo g && hexo s
 ```
 
 More info: [Server](https://hexo.io/docs/server.html)

@@ -1,6 +1,7 @@
 ---
 title: EFCore Usage Daily Notes
 date: 2024-06-06 14:22:52
+updated: 2024-06-06 14:22:52
 tags: EFCore
 ---
 

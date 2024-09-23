@@ -1,6 +1,7 @@
 ---
 title: How to fix RuntimeBinderException
 date: 2023-04-13 20:27:39
+updated: 2023-04-13 20:27:39
 tags: C#
 ---
 
@@ -41,7 +42,7 @@ catch (Exception e)
 
 # 解决方案
 
-因为匿名类型默认是 Internal 的访问级别。这就意味着如果是同一个程序集中通过Dynamic 类型来访问这个匿名对象是没有问题，但是如果跨程序集就会导致 RuntimeBinder 无法识别这种类型，从而也就引发了 **RuntimeBinderException** 异常。解决这种问题有 2 种方法：
+因为匿名类型默认是 Internal 的访问级别。这就意味着如果是同一个程序集中通过 Dynamic 类型来访问这个匿名对象是没有问题，但是如果跨程序集就会导致 RuntimeBinder 无法识别这种类型，从而也就引发了 **RuntimeBinderException** 异常。解决这种问题有 2 种方法：
 
 - 修改返回类型为强类型，取消匿名类型
 - 添加 InternalsVisibleTo 属性，让 Internal 级别的对象对外暴露（如下图所示）

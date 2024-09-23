@@ -1,12 +1,13 @@
 ---
 title: Tech Session - Redux
 date: 2022-03-19 21:34:34
+updated: 2022-03-19 21:34:34
 tags: Redux
 ---
 
 # 什么是 Redux
 
-这里借用官方的一句描述： A Predictable State Container for JS Apps 。其本质就是一个状态管理的扩展包，由 Facebook于 2015 年提出并开源，类似 Vue 生态下的 vuex。它本身和 React 没有直接关系，只是在 React 生态的长期发展过程中，Redux 赢得了开发者的喜爱，并且和 React 师出同门，可能是最受欢迎的状态管理包。
+这里借用官方的一句描述： A Predictable State Container for JS Apps 。其本质就是一个状态管理的扩展包，由 Facebook 于 2015 年提出并开源，类似 Vue 生态下的 vuex。它本身和 React 没有直接关系，只是在 React 生态的长期发展过程中，Redux 赢得了开发者的喜爱，并且和 React 师出同门，可能是最受欢迎的状态管理包。
 
 # 解决什么问题
 
@@ -15,7 +16,7 @@ React 的推出大大提高了前端程序员的开发效率。其组件化的�
 - 数据如何共享：比如全局应用状态，用户登陆信息等
 - 模块如何通信：父子级组件，完全独立的多个组件之间
 
-为了解决上述问题，Facebook  官方推出了 Redux，提供了一套标准且严格的状态管理方案，为企业级的应用开发注入了新的 Buff。
+为了解决上述问题，Facebook 官方推出了 Redux，提供了一套标准且严格的状态管理方案，为企业级的应用开发注入了新的 Buff。
 
 # 技术架构
 
@@ -24,13 +25,13 @@ React 的推出大大提高了前端程序员的开发效率。其组件化的�
 ## 设计思想
 
 - 响应式编程：Rx-Programming
-    - 面向数据流和变化传播的编程范式，旨在简化事件驱动应用的实现。响应式编程专注于如何创建依赖于变更的数据流并对变化做出响应。简单理解为：你给我一个变化，我做出一个反馈。
-    - 场景模拟：自然界就属于一个响应式编程方式的场景。
+  - 面向数据流和变化传播的编程范式，旨在简化事件驱动应用的实现。响应式编程专注于如何创建依赖于变更的数据流并对变化做出响应。简单理解为：你给我一个变化，我做出一个反馈。
+  - 场景模拟：自然界就属于一个响应式编程方式的场景。
 - 发布订阅模式：Pub-Sub（event-sourcing& CQRS）
-    - 通过将一个对象在全生命周期期间所参与的事件进行存储，方便回溯和审计。
-    - 命令查询职责分离
+  - 通过将一个对象在全生命周期期间所参与的事件进行存储，方便回溯和审计。
+  - 命令查询职责分离
 - 观察者模式：Observer-Pattern
-    - 当一个对象方式变化时，所有依赖它的对象都会发生变化。
+  - 当一个对象方式变化时，所有依赖它的对象都会发生变化。
 
 ## 设计架构
 
@@ -41,24 +42,24 @@ Redux 是基于单向数据流（**one-way data flow**）的，如下图所示�
 为了实现上图的效果，结合 Redux，这里罗列了如下几个重要概念：
 
 - Store
-    - 全局唯一，是整个应用存放全部 State 的唯一地方；
-    - 将 Action 和 Reducer 进行关联
-    - 通过 subscribe 来订阅 State 发生变化时的回调
-    - 通过 unSubscribe 来取消订阅回调
+  - 全局唯一，是整个应用存放全部 State 的唯一地方；
+  - 将 Action 和 Reducer 进行关联
+  - 通过 subscribe 来订阅 State 发生变化时的回调
+  - 通过 unSubscribe 来取消订阅回调
 - Action
-    - 只描述要干什么事情，不描述如何干这件事情（更新 State ）
-    - 本质是一个包含 type 属性的 JS 对象
-    - 通过 store.dispatch 来进行发送
-    - 通过 ActionCreator 可以将多个 Action 合并到一起
+  - 只描述要干什么事情，不描述如何干这件事情（更新 State ）
+  - 本质是一个包含 type 属性的 JS 对象
+  - 通过 store.dispatch 来进行发送
+  - 通过 ActionCreator 可以将多个 Action 合并到一起
 - State
-    - 数据 State，界面 State，应用 State
-    - 具有不变性，不能被修改，只能被更新
+  - 数据 State，界面 State，应用 State
+  - 具有不变性，不能被修改，只能被更新
 - Reducer
-    - 纯函数，用于响应发送过来的 Action
-    - 接收两个参数，第一个是初始化时的 State，第二个是接收到的 Action
-    - 必须要有返回值（新的 State）
+  - 纯函数，用于响应发送过来的 Action
+  - 接收两个参数，第一个是初始化时的 State，第二个是接收到的 Action
+  - 必须要有返回值（新的 State）
 - Selector
-    - 定义了一系列方便组件使用的扩展方法
+  - 定义了一系列方便组件使用的扩展方法
 
 # 如何使用
 
@@ -91,7 +92,7 @@ import Counter from "./features/counter/Counter";
 function App() {
   return (
     <div className="App">
-      <Counter/>
+      <Counter />
     </div>
   );
 }
@@ -114,7 +115,7 @@ npm install react-redux
 # Or if you use Yarn:
 yarn add react-redux
 
-install devtools for dev 
+install devtools for dev
 npm install --save-dev redux-devtools
 ```
 
@@ -145,7 +146,7 @@ class Store {
     this.subscribers = [];
     this.state = this.reducer(undefined, {});
   }
-  
+
   unsubscribeAll = () => {
     this.subscribers = [];
   };
@@ -298,15 +299,15 @@ export default CounterModule;
 # 优缺点和适用场景
 
 - 优点
-    - **Predictable：**可预测的（践行纯函数的思想，不变性）
-    - **Centralized：**将应用的状态进行集中化管理（发布-订阅模式）
-    - **Debuggable：**配合 Redux DevTools 进行高效调试数据状态
-    - **Flexible：**可与任何UI 层框架搭配使用
+  - **Predictable：**可预测的（践行纯函数的思想，不变性）
+  - **Centralized：**将应用的状态进行集中化管理（发布-订阅模式）
+  - **Debuggable：**配合 Redux DevTools 进行高效调试数据状态
+  - **Flexible：**可与任何 UI 层框架搭配使用
 - 缺点（可能）
-    - 有一定的学习曲线，并不适合小型项目
-    - 存在大量模式代码
-    - 在观察者模式下，如果观察者和被观察者之间存在依赖，则有可能产生调用死循环
-    - 所有的状态都在内存维护，如果应用意外崩溃则会导致状态全部丢失了
-    - 参数传递有些麻烦，需要一层层传（感觉有点违背了 Pub - Sub 的本身思想，但是如果不这样做又会让整个项目太混乱难于维护）
+  - 有一定的学习曲线，并不适合小型项目
+  - 存在大量模式代码
+  - 在观察者模式下，如果观察者和被观察者之间存在依赖，则有可能产生调用死循环
+  - 所有的状态都在内存维护，如果应用意外崩溃则会导致状态全部丢失了
+  - 参数传递有些麻烦，需要一层层传（感觉有点违背了 Pub - Sub 的本身思想，但是如果不这样做又会让整个项目太混乱难于维护）
 
 适用场景：由于 Redux 具有严格的状态管理机制，所以当你对组件之间的维护感到吃力时，可以考虑使用 Redux；不要一上来就用，否则是给自己找麻烦。Redux 本身不直接修改状态，只是提供了一种更新状态的方案而已。

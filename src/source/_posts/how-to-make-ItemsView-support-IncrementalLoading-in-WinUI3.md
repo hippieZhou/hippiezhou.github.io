@@ -1,6 +1,7 @@
 ---
 title: How to make ItemsView support IncrementalLoading in WinUI3
 date: 2024-09-22 21:40:01
+updated: 2024-09-22 21:40:01
 tags: WinUI3
 ---
 
@@ -106,7 +107,7 @@ public class IncrementalLoadingBehavior : Behavior<ItemsView>
     private void OnViewChanged(object? sender, ScrollViewerViewChangedEventArgs e)
     {
         if (scrollViewer != null &&
-                scrollViewer.VerticalOffset >= scrollViewer.ScrollableHeight - 100) 
+                scrollViewer.VerticalOffset >= scrollViewer.ScrollableHeight - 100)
         {
             LoadMoreItemsCommand?.Execute(null);
         }

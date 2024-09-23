@@ -1,6 +1,7 @@
 ---
 title: How to integrate Opentelemetry with Quartz.net in Worker
 date: 2024-05-08 13:57:49
+updated: 2024-05-08 13:57:49
 tags: Opentelemetry
 ---
 
