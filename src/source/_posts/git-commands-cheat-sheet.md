@@ -106,3 +106,15 @@ Host github.com
 ```
 
 Then, run the command `ssh -T git@github.com` to confirm if the issue is fixed.
+
+## Cannot fetch all remote branchs
+
+try to open your repository config by `git config -e (--global)`, and then modify relevant configuration:
+
+```C#
+[remote "origin"]
+    url = https://git.example.com/example.git (you can omit this URL)
+    fetch = +refs/heads/*:refs/remotes/origin/*
+```
+
+after that, you can run `git fetch --all`.
