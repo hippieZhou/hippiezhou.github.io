@@ -93,6 +93,10 @@ git stash apply
 git fetch --all --prune
 ```
 
+# Use Git like a pro.
+
+![Use Git like a pro.](/images/git-commands-cheat-sheet/GYZ96EYasAA3GOf.jpg)
+
 # Errors
 
 ## Fix "ssh: connect to host github.com port 22: Connection timed out"
