@@ -13,7 +13,7 @@ Currently, I'm working on a legacy application, aiming to migrate it to the **.N
 
 | Time | Things                              |
 | ---- | ----------------------------------- |
-| 2024 | WinUI, WinForm, ASP.NET Core, React |
+| 2024 | WinUI, WinForm, ASP.NET Core        |
 
 # Work Experience
 
