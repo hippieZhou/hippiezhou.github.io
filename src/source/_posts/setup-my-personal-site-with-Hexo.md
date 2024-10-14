@@ -1,5 +1,5 @@
 ---
-title: Hello World
+title: Setup my personal site with Hexo
 date: 2016-07-01 12:43:22
 updated: 2016-07-01 12:43:22
 tag: Frontend
