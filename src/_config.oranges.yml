@@ -153,6 +153,9 @@ friends:
   - nickname: ihavenotv
     site: https://ihavenotv.com/
     meta: Documentaries
+  - nickname: 英文库
+    site: https://english.cool/
+    meta: English
 
 # 页脚信息
 footer:
