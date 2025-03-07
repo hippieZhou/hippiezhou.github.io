@@ -115,10 +115,24 @@ Then, run the command `ssh -T git@github.com` to confirm if the issue is fixed.
 
 try to open your git config by `git config -e (--global)`, and then modify relevant configuration:
 
-```C#
+```shell
 [remote "origin"]
     url = https://git.example.com/example.git (you can omit this URL)
     fetch = +refs/heads/*:refs/remotes/origin/*
 ```
 
 after that, you can run `git fetch --all`.
+
+## Generate or apply patch file
+
+```shell  
+# Creating a patch from unstaged changes
+git diff > changes.patch  
+# Creating a patch from staged changes
+git diff --cached > changes.patch  
+# Creating a patch between two commits
+git diff commit1 commit2 > changes.patch
+
+# Apply the changes specified in changes.patch to your current working directory.
+git apply changes.patch
+```
