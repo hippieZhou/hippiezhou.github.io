@@ -1,54 +1,85 @@
 ---
-title: about
+title: About Me
 date: 2024-09-05 20:20:53
 type: "about"
 ---
 
-# Intro
+# 👋 Introduction
 
-Hi there👋. I'm a creative developer from China, specializing in backend development and DevOps at **[Thoughtworks](https://www.thoughtworks.com/)**, with more than **8 years** of experience in **.NET-related** technologies. I enjoy turning complex problems into simple solutions.
-Currently, I'm working on a legacy application, aiming to migrate it to the **.NET 8** platform and helping our client achieve greater benefits through our work.
+Hi there! I'm a **creative developer** from China, specializing in **backend development** and **DevOps** at **[Thoughtworks](https://www.thoughtworks.com/)**. With over **8 years** of experience in **.NET-related technologies**, I enjoy turning complex problems into simple, elegant solutions.
 
-# What I'm Doing
-
-| Time | Things                              |
-| ---- | ----------------------------------- |
-| 2024 | WinUI, WinForm, ASP.NET Core        |
-
-# Work Experience
-
-### [Thoughtworks](https://www.thoughtworks.com/) 02/2022 - Now
-
-> Consultant
-
-As a consultant in thoughtworks, mainly committed to the transformation and upgrading of legacy systems.
+Currently, I'm working on a **legacy application migration** project, aiming to transition it to the **.NET 8** platform while helping our clients achieve greater business value.
 
 ---
 
-### [Ming Yuan Cloud Group Holdings Limited](https://www.mingyuanyun.com/) 07/2020 - 02/2022
+# 🚀 What I'm Doing
 
-> .NET Backend Developer
-
-I worked in ERP system development at a software company in the real estate industry. During my time here, I've mainly focused on .NET-related client-side and server-side development, and have accumulated a significant amount of relevant experience.
-
----
-
-### Worked in BeiJin 06/2016 - 07/2020
-
-> WPF Developer
-
-Worked as a WPF developer in a traditional company, mainly engaged in the research and development of video surveillance related products.
+| **Year** | **Focus Areas**              |
+| -------- | ---------------------------- |
+| 2024     | ASP.NET Core, DevOps, WinUI3 |
 
 ---
 
-### Worked in WuHan 06/2015 - 06/2016
+# 💼 Work Experience
 
-> UAP Developer
+### 🏢 [Thoughtworks](https://www.thoughtworks.com/)
 
-Worked as an intern in a game company in Wuhan and accumulate work experience.
+**Consultant**  
+_Feb 2022 – Present_
+
+- Leading the transformation and modernization of legacy systems.
+- Collaborating with cross-functional teams to deliver high-quality solutions.
+- Driving DevOps practices to improve deployment efficiency and system reliability.
 
 ---
 
-# Education
+### 🏢 [Ming Yuan Cloud Group Holdings Limited](https://www.mingyuanyun.com/)
 
-- 2012—2016: Anyang Normal University / Software Engineering / Bachelor.
+**.NET Backend Developer**  
+_Jul 2020 – Feb 2022_
+
+- Developed ERP systems for the real estate industry.
+- Focused on both client-side and server-side development using .NET technologies.
+- Gained extensive experience in enterprise software development.
+
+---
+
+### 🏢 Worked in Beijing
+
+**WPF Developer**  
+_Jun 2016 – Jul 2020_
+
+- Designed and developed video surveillance products.
+- Specialized in WPF-based application development for traditional industries.
+
+---
+
+### 🏢 Worked in Wuhan
+
+**UAP Developer (Intern)**  
+_Jun 2015 – Jun 2016_
+
+- Worked as an intern in a game company.
+- Gained hands-on experience in software development and teamwork.
+
+---
+
+# 🎓 Education
+
+- **2012 – 2016**: Anyang Normal University  
+  **Bachelor's Degree in Software Engineering**
+
+---
+
+# 🌟 Skills
+
+- **Programming Languages**: C#, ASP.NET Core, WPF, WinUI
+- **DevOps Tools**: Kubernetes, Azure DevOps
+- **Other**: ERP Systems, Legacy System Modernization, Agile Development
+
+---
+
+# 📫 Get in Touch
+
+- **GitHub**: [hippiezhou](https://github.com/hippiezhou)
+- **博客园**: [hippie's Blog](https://www.cnblogs.com/hippiezhou)
