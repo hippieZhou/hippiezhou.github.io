@@ -4,19 +4,13 @@ date: 2024-09-05 20:20:53
 type: "about"
 ---
 
+> Expert, 8+ years of experience in backend and desktop application development.
+
 # 👋 Introduction
 
 Hi there! I'm a **creative developer** from China, specializing in **backend development** and **DevOps** at **[Thoughtworks](https://www.thoughtworks.com/)**. With over **8 years** of experience in **.NET-related technologies**, I enjoy turning complex problems into simple, elegant solutions.
 
 Currently, I'm working on a **legacy application migration** project, aiming to transition it to the **.NET 8** platform while helping our clients achieve greater business value.
-
----
-
-# 🚀 What I'm Doing
-
-| **Year** | **Focus Areas**              |
-| -------- | ---------------------------- |
-| 2024     | ASP.NET Core, DevOps, WinUI3 |
 
 ---
 
@@ -27,6 +21,7 @@ Currently, I'm working on a **legacy application migration** project, aiming to 
 **Consultant**  
 _Feb 2022 – Present_
 
+- Focusing on **ASP.NET Core** for building scalable and high-performance web applications.
 - Leading the transformation and modernization of legacy systems.
 - Collaborating with cross-functional teams to deliver high-quality solutions.
 - Driving DevOps practices to improve deployment efficiency and system reliability.
@@ -64,18 +59,55 @@ _Jun 2015 – Jun 2016_
 
 ---
 
+<!--
+
+# 🚀 What I'm Doing Now
+
+# 🏅 Certifications
+
+- **Certified Kubernetes Administrator (CKA)**
+  Credential ID: [Your Credential ID]
+  Issued by CNCF in **[Year]**
+
+---
+
 # 🎓 Education
 
-- **2012 – 2016**: Anyang Normal University  
+- **2012 – 2016**: Anyang Normal University
   **Bachelor's Degree in Software Engineering**
 
 ---
 
+-->
+
 # 🌟 Skills
 
-- **Programming Languages**: C#, ASP.NET Core, WPF, WinUI
-- **DevOps Tools**: Kubernetes, Azure DevOps
-- **Other**: ERP Systems, Legacy System Modernization, Agile Development
+## **Frameworks & Technologies**
+
+- **ASP.NET Core**: Proficient, with hands-on project experience in building high-performance web APIs and enterprise applications.
+- **WPF & WinUI**: Extensive experience in modern desktop application development, including video surveillance systems.
+- **Entity Framework Core**: Skilled in designing and optimizing database access layers.
+- **Blazor**: Experience with .NET-based frontend development.
+
+## **DevOps**
+
+- **Kubernetes**: Familiar with container orchestration and managing microservices architecture.
+- **Azure DevOps & CircleCI**: Used for CI/CD pipeline setup and management in real-world projects.
+- **GitHub Actions**: Used for workflow automation and code management.
+
+## **Architecture & Design**
+
+- **Microservices Architecture**: Hands-on experience in service decomposition, communication, and governance.
+- **RESTful API**: Skilled in designing and implementing APIs following industry best practices.
+- **CQRS & Event Sourcing**: Applied in scenarios requiring high concurrency and complex business logic.
+- **Test-Driven Development (TDD)**: Applied TDD principles in multiple projects to ensure code quality and maintainability. Developed unit tests and integration tests before implementation, resulting in fewer bugs and faster delivery cycles.
+- **Domain-Driven Design (DDD)**: Used for modeling and implementing complex business systems.
+
+## **Others**
+
+- **Legacy System Modernization**: Led the migration of legacy systems to modern frameworks like **.NET Core**, improving performance, scalability, and maintainability. Integrated containerization using **Docker** and **Kubernetes** to streamline deployment and enhance system reliability.
+- **ERP Systems Development**: Participated in developing ERP systems for **the real estate industry**, familiar with enterprise application requirements.
+- **Agile Development**: Familiar with **Scrum** and **Jira**, skilled in cross-functional team collaboration.
 
 ---
 
