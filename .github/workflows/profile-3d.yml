@@ -15,7 +15,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
-          OUTPUT_DIR: ./src
+      - name: Move profile-3d-contrib to src
+        run: |
+          mkdir -p src
+          mv -f profile-3d-contrib src/
       - name: Commit & Push
         run: |
           git config user.name github-actions
