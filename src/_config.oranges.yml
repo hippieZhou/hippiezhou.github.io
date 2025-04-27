@@ -96,7 +96,7 @@ navbar:
     path: /tags/
     key: tags
   - name: Friends
-    enable: true
+    enable: false
     path: /friends/
     key: friends
   - name: About
@@ -137,7 +137,7 @@ friends:
     meta:
   - nickname: Weichao Deng
     site: https://juniperphoton.substack.com/
-    meta: 
+    meta:
   - nickname: Product Hunt
     site: https://www.producthunt.com/
     meta: Forum

@@ -23,7 +23,7 @@ _Feb 2022 – Present_
 
 - Focusing on **ASP.NET Core** for building scalable and high-performance web applications.
 - Leading the transformation and modernization of legacy systems.
-- Collaborating with cross-functional teams to deliver high-quality solutions.
+- Collaborating with cross-functional teams both onshore and offshore to deliver high-quality solutions.
 - Driving DevOps practices to improve deployment efficiency and system reliability.
 
 ---
