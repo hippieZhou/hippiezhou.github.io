@@ -8,7 +8,7 @@ type: "about"
 
 # 👋 Introduction
 
-Hi there! I'm a **creative developer** from China, specializing in **backend development** and **DevOps** at **[Thoughtworks](https://www.thoughtworks.com/)**. With over **8 years** of experience in **.NET-related technologies**, I enjoy turning complex problems into simple, elegant solutions.
+Hi there! I'm a **creative developer** from China, specializing in **backend development** and **DevOps** at **[Thoughtworks](https://www.thoughtworks.com/)**. I have been working for Thoughtworks since 2012, and with over **8 years** of experience in **.NET-related technologies**, I enjoy turning complex problems into simple, elegant solutions.
 
 Currently, I'm working on a **legacy application migration** project, aiming to transition it to the **.NET 8** platform while helping our clients achieve greater business value.
 
