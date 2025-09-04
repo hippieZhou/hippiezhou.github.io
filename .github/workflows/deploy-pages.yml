@@ -1,0 +1,155 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+# 设置环境变量
+env:
+  NODE_VERSION: '20'
+  CACHE_KEY: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+
+jobs:
+  # 构建和测试作业
+  build-and-test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./src
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          submodules: recursive
+          fetch-depth: 0  # 获取完整历史用于缓存优化
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: './src/package-lock.json'
+      
+      - name: Cache node_modules
+        uses: actions/cache@v4
+        with:
+          path: |
+            ./src/node_modules
+            ~/.npm
+          key: ${{ env.CACHE_KEY }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+            ${{ runner.os }}-
+      
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit
+      
+      - name: Check for security vulnerabilities
+        run: npm audit --audit-level=moderate || true
+      
+      - name: Build site
+        run: npm run build
+        env:
+          NODE_ENV: production
+      
+      - name: Test build output
+        run: |
+          if [ ! -d "public" ]; then
+            echo "❌ Build failed: public directory not found"
+            exit 1
+          fi
+          echo "✅ Build successful: $(find public -type f | wc -l) files generated"
+      
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-build
+          path: ./src/public
+          retention-days: 1
+
+  # 部署作业
+  deploy:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    
+    permissions:
+      pages: write
+      id-token: write
+      contents: read
+    
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    
+    steps:
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: site-build
+          path: ./site-build
+      
+      - name: Upload to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+        with:
+          path: ./site-build
+      
+      - name: Verify deployment
+        run: |
+          echo "🚀 Deployment completed successfully!"
+          echo "🌐 Site URL: ${{ steps.deployment.outputs.page_url }}"
+      
+      - name: Notify deployment status
+        if: always()
+        run: |
+          if [ "${{ job.status }}" == "success" ]; then
+            echo "✅ Deployment successful to ${{ steps.deployment.outputs.page_url }}"
+          else
+            echo "❌ Deployment failed"
+            exit 1
+          fi
+
+  # 性能检查作业
+  performance-check:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    
+    steps:
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: site-build
+          path: ./site-build
+      
+      - name: Check build size
+        run: |
+          BUILD_SIZE=$(du -sh ./site-build | cut -f1)
+          echo "📊 Build size: $BUILD_SIZE"
+          
+          # 检查是否有过大的文件
+          LARGE_FILES=$(find ./site-build -type f -size +1M | wc -l)
+          if [ $LARGE_FILES -gt 0 ]; then
+            echo "⚠️  Found $LARGE_FILES files larger than 1MB"
+            find ./site-build -type f -size +1M -exec ls -lh {} \;
+          else
+            echo "✅ No large files detected"
+          fi
+      
+      - name: Check for broken links (basic)
+        run: |
+          # 简单的链接检查
+          HTML_FILES=$(find ./site-build -name "*.html" | head -5)
+          for file in $HTML_FILES; do
+            echo "Checking $file..."
+            grep -o 'href="[^"]*"' "$file" | head -3 || true
+          done
