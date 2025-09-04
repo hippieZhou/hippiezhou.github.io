@@ -13,6 +13,8 @@ jobs:
   # 构建和测试作业
   build-and-test:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     env:
       NODE_VERSION: "20"
     defaults:
