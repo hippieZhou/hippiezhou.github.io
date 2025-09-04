@@ -61,19 +61,25 @@ jobs:
         run: |
           echo "🧹 Cleaning problematic files..."
 
+          # 检查 public 目录是否存在
+          if [ ! -d "public" ]; then
+            echo "⚠️  Public directory not found, skipping cleanup"
+            exit 0
+          fi
+
           # 删除 Zone.Identifier 文件
-          find ./src/public -name "*:Zone.Identifier" -type f -delete
-          find ./src/public -name "*.Zone.Identifier" -type f -delete
+          find ./public -name "*:Zone.Identifier" -type f -delete
+          find ./public -name "*.Zone.Identifier" -type f -delete
 
           # 删除其他可能包含冒号的文件
-          find ./src/public -name "*:*" -type f -delete
+          find ./public -name "*:*" -type f -delete
 
           # 删除隐藏文件（可选）
-          find ./src/public -name ".*" -type f -delete
+          find ./public -name ".*" -type f -delete
 
           # 删除 macOS 系统文件
-          find ./src/public -name ".DS_Store" -type f -delete
-          find ./src/public -name "Thumbs.db" -type f -delete
+          find ./public -name ".DS_Store" -type f -delete
+          find ./public -name "Thumbs.db" -type f -delete
 
           echo "✅ Problematic files cleaned"
 
