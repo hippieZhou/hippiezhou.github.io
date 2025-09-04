@@ -1,4 +1,7 @@
 name: Dependency Check & Security Audit
+permissions:
+  contents: read
+  issues: write
 
 on:
   schedule:
