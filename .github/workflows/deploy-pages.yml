@@ -63,6 +63,20 @@ jobs:
         env:
           NODE_ENV: production
 
+      - name: Verify build success
+        run: |
+          echo "🔍 Verifying build success..."
+          if [ ! -d "public" ]; then
+            echo "❌ Build failed: public directory not found"
+            echo "🔍 Checking for build errors..."
+            echo "Current directory: $(pwd)"
+            ls -la
+            echo "🔍 Checking for any generated files..."
+            find . -type f -name "*.html" -o -name "*.css" -o -name "*.js" | head -10
+            exit 1
+          fi
+          echo "✅ Build successful: public directory found"
+
       - name: Debug build output
         run: |
           echo "🔍 Debugging build output..."
@@ -122,13 +136,18 @@ jobs:
           name: site-build
           path: ./public
           retention-days: 7
-          if-no-files-found: warn
+          if-no-files-found: error
 
       - name: Verify artifact upload
         run: |
           echo "📦 Verifying artifact upload..."
-          ls -la ./public/ || echo "⚠️  Public directory not found"
-          echo "✅ Artifact upload verification completed"
+          if [ -d "./public" ]; then
+            echo "✅ Public directory exists with $(find ./public -type f | wc -l) files"
+            ls -la ./public/ | head -5
+          else
+            echo "❌ Public directory not found"
+            exit 1
+          fi
 
   # 部署作业
   deploy:
@@ -157,6 +176,9 @@ jobs:
           echo "📦 Verifying downloaded artifacts..."
           if [ ! -d "./site-build" ]; then
             echo "❌ Site build directory not found"
+            echo "🔍 Checking available artifacts..."
+            echo "Current directory: $(pwd)"
+            ls -la
             exit 1
           fi
           echo "✅ Found $(find ./site-build -type f | wc -l) files in site-build"
