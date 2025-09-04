@@ -222,43 +222,25 @@ jobs:
           echo "✅ Found $(find ./site-build -type f | wc -l) files in site-build"
           ls -la ./site-build/ | head -10
 
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./site-build
+
       - name: Deploy to GitHub Pages
         id: deployment
-        run: |
-          echo "🚀 Deploying to GitHub Pages..."
-
-          # 配置 Git
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
-          # 创建 gh-pages 分支并推送
-          cd ./site-build
-          echo "📁 Current directory: $(pwd)"
-          echo "📊 Files to deploy: $(find . -type f | wc -l)"
-
-          git init
-          git add .
-          git commit -m "Deploy to GitHub Pages"
-          git branch -M gh-pages
-
-          echo "🔗 Adding remote origin..."
-          git remote add origin https://github.com/${{ github.repository }}.git
-
-          echo "📤 Pushing to gh-pages branch..."
-          git push -f https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git gh-pages
-
-          echo "✅ Deployment completed"
+        uses: actions/deploy-pages@v4
 
       - name: Verify deployment
         run: |
           echo "🚀 Deployment completed successfully!"
-          echo "🌐 Site URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
+          echo "🌐 Site URL: ${{ steps.deployment.outputs.page_url }}"
 
       - name: Notify deployment status
         if: always()
         run: |
           if [ "${{ job.status }}" == "success" ]; then
-            echo "✅ Deployment successful to https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
+            echo "✅ Deployment successful to ${{ steps.deployment.outputs.page_url }}"
           else
             echo "❌ Deployment failed"
             exit 1
