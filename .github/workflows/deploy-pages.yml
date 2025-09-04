@@ -134,7 +134,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: site-build
-          path: ./public
+          path: ./src/public
           retention-days: 7
           if-no-files-found: error
 
