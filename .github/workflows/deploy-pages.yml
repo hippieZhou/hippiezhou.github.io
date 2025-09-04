@@ -196,7 +196,7 @@ jobs:
     permissions:
       pages: write
       id-token: write
-      contents: read
+      contents: write
 
     environment:
       name: github-pages
@@ -226,20 +226,27 @@ jobs:
         id: deployment
         run: |
           echo "🚀 Deploying to GitHub Pages..."
-          
+
           # 配置 Git
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          
+
           # 创建 gh-pages 分支并推送
           cd ./site-build
+          echo "📁 Current directory: $(pwd)"
+          echo "📊 Files to deploy: $(find . -type f | wc -l)"
+          
           git init
           git add .
           git commit -m "Deploy to GitHub Pages"
           git branch -M gh-pages
-          git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
-          git push -f origin gh-pages
           
+          echo "🔗 Adding remote origin..."
+          git remote add origin https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+          
+          echo "📤 Pushing to gh-pages branch..."
+          git push -f origin gh-pages
+
           echo "✅ Deployment completed"
 
       - name: Verify deployment
