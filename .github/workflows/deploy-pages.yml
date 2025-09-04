@@ -60,21 +60,21 @@ jobs:
       - name: Clean problematic files
         run: |
           echo "🧹 Cleaning problematic files..."
-          
+
           # 删除 Zone.Identifier 文件
           find ./src/public -name "*:Zone.Identifier" -type f -delete
           find ./src/public -name "*.Zone.Identifier" -type f -delete
-          
+
           # 删除其他可能包含冒号的文件
           find ./src/public -name "*:*" -type f -delete
-          
+
           # 删除隐藏文件（可选）
           find ./src/public -name ".*" -type f -delete
-          
+
           # 删除 macOS 系统文件
           find ./src/public -name ".DS_Store" -type f -delete
           find ./src/public -name "Thumbs.db" -type f -delete
-          
+
           echo "✅ Problematic files cleaned"
 
       - name: Test build output
