@@ -222,20 +222,36 @@ jobs:
           echo "✅ Found $(find ./site-build -type f | wc -l) files in site-build"
           ls -la ./site-build/ | head -10
 
-      - name: Upload to GitHub Pages
+      - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        run: |
+          echo "🚀 Deploying to GitHub Pages..."
+          
+          # 配置 Git
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # 创建 gh-pages 分支并推送
+          cd ./site-build
+          git init
+          git add .
+          git commit -m "Deploy to GitHub Pages"
+          git branch -M gh-pages
+          git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+          git push -f origin gh-pages
+          
+          echo "✅ Deployment completed"
 
       - name: Verify deployment
         run: |
           echo "🚀 Deployment completed successfully!"
-          echo "🌐 Site URL: ${{ steps.deployment.outputs.page_url }}"
+          echo "🌐 Site URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
 
       - name: Notify deployment status
         if: always()
         run: |
           if [ "${{ job.status }}" == "success" ]; then
-            echo "✅ Deployment successful to ${{ steps.deployment.outputs.page_url }}"
+            echo "✅ Deployment successful to https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
           else
             echo "❌ Deployment failed"
             exit 1
