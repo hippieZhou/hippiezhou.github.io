@@ -96,7 +96,14 @@ jobs:
         with:
           name: site-build
           path: ./public
-          retention-days: 1
+          retention-days: 7
+          if-no-files-found: error
+
+      - name: Verify artifact upload
+        run: |
+          echo "📦 Verifying artifact upload..."
+          ls -la ./public/ || echo "⚠️  Public directory not found"
+          echo "✅ Artifact upload verification completed"
 
   # 部署作业
   deploy:
@@ -119,6 +126,16 @@ jobs:
         with:
           name: site-build
           path: ./site-build
+
+      - name: Verify downloaded artifacts
+        run: |
+          echo "📦 Verifying downloaded artifacts..."
+          if [ ! -d "./site-build" ]; then
+            echo "❌ Site build directory not found"
+            exit 1
+          fi
+          echo "✅ Found $(find ./site-build -type f | wc -l) files in site-build"
+          ls -la ./site-build/ | head -10
 
       - name: Upload to GitHub Pages
         id: deployment
