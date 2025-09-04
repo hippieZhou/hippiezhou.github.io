@@ -235,17 +235,17 @@ jobs:
           cd ./site-build
           echo "📁 Current directory: $(pwd)"
           echo "📊 Files to deploy: $(find . -type f | wc -l)"
-          
+
           git init
           git add .
           git commit -m "Deploy to GitHub Pages"
           git branch -M gh-pages
-          
+
           echo "🔗 Adding remote origin..."
-          git remote add origin https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
-          
+          git remote add origin https://github.com/${{ github.repository }}.git
+
           echo "📤 Pushing to gh-pages branch..."
-          git push -f origin gh-pages
+          git push -f https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git gh-pages
 
           echo "✅ Deployment completed"
 
