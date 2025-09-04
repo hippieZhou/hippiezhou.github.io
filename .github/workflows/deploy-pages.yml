@@ -106,6 +106,8 @@ jobs:
             exit 0
           fi
 
+          echo "📊 Checking artifact size and content..."
+
           # 删除 Zone.Identifier 文件
           find ./public -name "*:Zone.Identifier" -type f -delete
           find ./public -name "*.Zone.Identifier" -type f -delete
@@ -113,12 +115,48 @@ jobs:
           # 删除其他可能包含冒号的文件
           find ./public -name "*:*" -type f -delete
 
-          # 删除隐藏文件（可选）
+          # 删除隐藏文件
           find ./public -name ".*" -type f -delete
 
           # 删除 macOS 系统文件
           find ./public -name ".DS_Store" -type f -delete
           find ./public -name "Thumbs.db" -type f -delete
+
+          # 删除符号链接
+          find ./public -type l -delete
+
+          # 处理硬链接（保留一个副本，删除重复的）
+          echo "🔍 Checking for hard links..."
+          find ./public -type f -exec ls -i {} \; | awk '{print $1}' | sort | uniq -d | while read inode; do
+            echo "⚠️  Found hard links with inode $inode"
+            # 找到所有具有相同 inode 的文件
+            files=$(find ./public -type f -inum "$inode")
+            # 保留第一个文件，删除其余的
+            first_file=$(echo "$files" | head -1)
+            echo "  Keeping: $first_file"
+            echo "$files" | tail -n +2 | xargs rm -f
+          done
+
+          # 检查总大小
+          TOTAL_SIZE_BYTES=$(du -sb ./public | cut -f1)
+          TOTAL_SIZE_GB=$(echo "scale=2; $TOTAL_SIZE_BYTES / 1024 / 1024 / 1024" | bc -l 2>/dev/null || echo "0")
+          echo "📊 Total artifact size: $(du -sh ./public | cut -f1) ($TOTAL_SIZE_GB GB)"
+
+          # 检查是否超过 10GB 限制
+          if (( $(echo "$TOTAL_SIZE_GB > 10" | bc -l) )); then
+            echo "❌ Artifact size exceeds 10GB limit: $TOTAL_SIZE_GB GB"
+            echo "🔍 Largest files:"
+            find ./public -type f -exec ls -lh {} \; | sort -k5 -hr | head -10
+            exit 1
+          fi
+
+          # 检查文件数量
+          FILE_COUNT=$(find ./public -type f | wc -l)
+          echo "📊 Total files: $FILE_COUNT"
+
+          # 列出最大的文件
+          echo "🔍 Largest files:"
+          find ./public -type f -exec ls -lh {} \; | sort -k5 -hr | head -5
 
           echo "✅ Problematic files cleaned"
 
