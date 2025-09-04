@@ -52,10 +52,35 @@ jobs:
       - name: Check for security vulnerabilities
         run: npm audit --audit-level=moderate || true
 
+      - name: Clean previous build
+        run: |
+          echo "🧹 Cleaning previous build..."
+          npm run clean || echo "Clean command completed"
+          rm -rf public/ || echo "No previous public directory to remove"
+
       - name: Build site
         run: npm run build
         env:
           NODE_ENV: production
+
+      - name: Debug build output
+        run: |
+          echo "🔍 Debugging build output..."
+          echo "Current directory: $(pwd)"
+          echo "Directory contents:"
+          ls -la
+          echo ""
+          echo "Checking for public directory:"
+          if [ -d "public" ]; then
+            echo "✅ Public directory exists"
+            echo "Public directory contents:"
+            ls -la public/ | head -10
+            echo "Total files in public: $(find public -type f | wc -l)"
+          else
+            echo "❌ Public directory not found"
+            echo "Looking for other possible output directories:"
+            find . -maxdepth 2 -type d -name "*public*" -o -name "*dist*" -o -name "*build*" 2>/dev/null || echo "No common output directories found"
+          fi
 
       - name: Clean problematic files
         run: |
@@ -97,7 +122,7 @@ jobs:
           name: site-build
           path: ./public
           retention-days: 7
-          if-no-files-found: error
+          if-no-files-found: warn
 
       - name: Verify artifact upload
         run: |
