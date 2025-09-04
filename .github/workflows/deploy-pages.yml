@@ -133,7 +133,7 @@ jobs:
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: site-build
+          name: github-pages
           path: ./src/public
           retention-days: 7
           if-no-files-found: error
@@ -168,7 +168,7 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
-          name: site-build
+          name: github-pages
           path: ./site-build
 
       - name: Verify downloaded artifacts
@@ -213,7 +213,7 @@ jobs:
       - name: Download build artifacts
         uses: actions/download-artifact@v4
         with:
-          name: site-build
+          name: github-pages
           path: ./site-build
 
       - name: Check build size
