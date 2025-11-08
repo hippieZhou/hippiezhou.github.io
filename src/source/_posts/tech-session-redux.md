@@ -1,5 +1,6 @@
 ---
-title: Tech Session - Redux
+title: 技术分享：Redux
+title_en: Tech Session - Redux
 date: 2022-03-19 21:34:34
 updated: 2022-03-19 21:34:34
 tags: Redux

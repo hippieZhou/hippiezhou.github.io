@@ -1,5 +1,6 @@
 ---
-title: The Locker in C#
+title: C# 中的 Locker
+title_en: The Locker in C#
 date: 2017-02-20 21:31:00
 updated: 2017-02-20 21:31:00
 tags: C#

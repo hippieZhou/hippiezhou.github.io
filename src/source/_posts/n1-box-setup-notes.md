@@ -1,5 +1,6 @@
 ---
 title: N1 盒子折腾笔记
+title_en: N1 Box Setup Notes
 date: 2025-04-27 21:28:11
 updated: 2025-04-27 21:28:11
 tags: 技术折腾

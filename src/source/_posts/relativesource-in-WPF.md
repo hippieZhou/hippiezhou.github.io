@@ -1,5 +1,6 @@
 ---
-title: RelativeSource in WPF
+title: WPF 中的 Relativesource
+title_en: RelativeSource in WPF
 date: 2017-03-28 21:28:16
 updated: 2017-03-28 21:28:16
 tags: WPF
