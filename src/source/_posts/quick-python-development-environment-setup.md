@@ -3,7 +3,11 @@ title: 提升你的 Python 开发体验：快速搭建本地开发环境
 title_en: "Improve Your Python Development Experience: Quick Local Environment Setup"
 date: 2025-01-17 15:21:50
 updated: 2025-01-17 15:21:50
-tags: Python, Development Tools, pyenv, Virtual Environment
+tags: 
+    - Python
+    - Development Tools
+    - pyenv
+    - Virtual Environment
 ---
 
 > 在团队协作中，统一和简化 Python 开发环境的配置流程可以显著提升开发效率。本文介绍如何使用自动化脚本快速搭建 Python 开发环境，包括 pyenv 管理、虚拟环境创建和依赖安装，帮助开发者节省时间，专注于真正的开发工作。

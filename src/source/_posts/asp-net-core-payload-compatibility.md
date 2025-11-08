@@ -3,7 +3,11 @@ title: 如何在 ASP.NET Core 中保持与 ASP.NET 一致的 Payload 处理
 title_en: "How to Keep Payload Processing in ASP.NET Core Consistent with ASP.NET"
 date: 2023-07-25 22:15:59
 updated: 2023-07-25 22:15:59
-tags: ASP.NET Core, Model Binding, JSON Serialization, Migration
+tags: 
+    - ASP.NET Core
+    - Model Binding
+    - JSON Serialization
+    - Migration
 ---
 
 > 在将 ASP.NET 应用迁移到 ASP.NET Core 时，可能会遇到 Payload 处理不一致的问题。当请求体中的数据类型与后端定义的类型不匹配时，ASP.NET 会使用默认值填充，而 ASP.NET Core 会抛出异常。本文分析问题原因，并提供两种解决方案，确保两个框架在处理请求体时保持一致的行为。

@@ -3,7 +3,8 @@ title: 如何在 Worker 中集成 OpenTelemetry 与 Quartz.net
 title_en: How to Integrate OpenTelemetry with Quartz.net in Worker
 date: 2024-05-08 13:57:49
 updated: 2024-05-08 13:57:49
-tags: OpenTelemetry
+tags: 
+    - OpenTelemetry
 ---
 
 > 在 .NET Core 的 Worker 类型项目中，**OpenTelemetry** 并没有为其提供标准的 `Instrumentation`，如果我们的项目中以 `Quartz.net` 作为我们默认的 Schedule Engine 的话，这个时候就需要考虑需要如何将两者集成到一起。本文介绍如何通过自定义 `IJobListener` 来实现 OpenTelemetry 与 Quartz.net 的集成，实现任务执行的分布式追踪。

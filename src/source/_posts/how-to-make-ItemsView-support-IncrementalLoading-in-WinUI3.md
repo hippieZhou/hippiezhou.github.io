@@ -3,7 +3,8 @@ title: 如何在 WinUI3 中让 ItemsView 支持 IncrementalLoading
 title_en: How to Make ItemsView Support IncrementalLoading in WinUI3
 date: 2024-09-22 21:40:01
 updated: 2024-09-22 21:40:01
-tags: WinUI3
+tags: 
+    - WinUI3
 ---
 
 > 在 WinUI3 中新增的 **ItemsView** 控件本身不支持 `IncrementalLoading` 进行增量加载，这给需要处理大量数据的场景带来了挑战。本文通过实现一个自定义的 Behavior 方式来解决这个问题，让 ItemsView 能够像 ListView 一样支持增量加载，提升大数据量场景下的性能和用户体验。

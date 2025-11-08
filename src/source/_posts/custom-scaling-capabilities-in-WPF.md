@@ -3,7 +3,8 @@ title: WPF 中的自定义缩放能力
 title_en: Custom Scaling Capabilities in WPF
 date: 2017-05-16 21:37:04
 updated: 2017-05-16 21:37:04
-tags: WPF
+tags: 
+    - WPF
 ---
 
 > 在 WPF 中实现自定义窗口缩放功能，通过 Grid 布局和 Rectangle 控件创建缩放区域，结合 Windows API 实现窗口的八个方向的缩放操作。

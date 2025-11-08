@@ -3,7 +3,8 @@ title: 使用单线程运行 WPF
 title_en: Run WPF with Single Thread
 date: 2017-07-19 21:20:58
 updated: 2017-07-19 21:20:58
-tags: WPF
+tags: 
+    - WPF
 ---
 
 > WPF 应用必须在单线程（STA）模式下运行。本文介绍两种在单线程中运行 WPF 应用的方式：使用 Thread 创建 STA 线程和使用 [STAThread] 特性标记主方法。

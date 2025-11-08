@@ -3,7 +3,11 @@ title: MEF 插件式架构实现指南：.NET Framework 与 .NET Core 对比
 title_en: "MEF Plugin Architecture Guide: .NET Framework vs .NET Core"
 date: 2022-02-17 21:21:18
 updated: 2022-02-17 21:21:18
-tags: MEF, .NET Framework, .NET Core, Plugin Architecture
+tags: 
+    - MEF
+    - .NET Framework
+    - .NET Core
+    - Plugin Architecture
 ---
 
 > MEF（Managed Extensibility Framework）是 .NET 框架中的扩展性框架，用于构建可扩展的应用程序。本文记录 MEF 在 .NET Framework 和 .NET Core/.NET 5+ 中的使用差异和实现方式，包括如何导出和导入组件、使用 ExportFactory 创建实例，以及在不同 .NET 版本中的配置差异。

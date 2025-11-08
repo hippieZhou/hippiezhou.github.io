@@ -3,7 +3,8 @@ title: 技术分享：Redux
 title_en: Tech Session - Redux
 date: 2022-03-19 21:34:34
 updated: 2022-03-19 21:34:34
-tags: Redux
+tags: 
+    - Redux
 ---
 
 > Redux 是一个可预测的状态容器，用于 JavaScript 应用。它解决了 React 应用中数据共享和组件通信的问题，提供了一套标准且严格的状态管理方案。本文介绍 Redux 的核心概念、工作原理和使用方法。

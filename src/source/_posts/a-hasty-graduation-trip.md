@@ -3,7 +3,8 @@ title: 匆忙的毕业旅行
 title_en: A Hasty Graduation Trip
 date: 2016-05-13 14:05:39
 updated: 2016-05-13 14:05:39
-tags: Life
+tags: 
+    - Life
 ---
 
 > 毕业将至，聊聊相隔一年会返校的感悟吧，毕竟是人生的一个阶段即将结束,算是一场人生总结吧！

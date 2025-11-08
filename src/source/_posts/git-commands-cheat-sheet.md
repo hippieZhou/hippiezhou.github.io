@@ -3,7 +3,8 @@ title: Git 命令速查表
 title_en: Git Commands Cheat Sheet
 date: 2022-02-27 20:55:55
 updated: 2022-02-27 20:55:55
-tags: Git
+tags: 
+    - Git
 ---
 
 > Git 常用命令速查表，包括仓库初始化、提交、分支管理、远程操作等常用命令，以及常见问题的解决方案。

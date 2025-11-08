@@ -3,7 +3,11 @@ title: ASP.NET Core 环境变量大小写敏感性问题解析
 title_en: Understanding ASP.NET Core Environment Variable Case Sensitivity Issues
 date: 2025-08-10 12:53:17
 updated: 2025-08-10 12:53:17
-tags: ASP.NET Core, Configuration, Environment Variables, Kubernetes
+tags: 
+    - ASP.NET Core
+    - Configuration
+    - Environment Variables
+    - Kubernetes
 ---
 
 > 在 ASP.NET Core 应用中，环境变量配置是一个常见且重要的配置方式。然而，ASP.NET Core 对环境变量**名称**的大小写不敏感，但环境变量**本身**是区分大小写的，这种不一致性在某些场景下会导致严重的配置问题。本文将深入分析这个问题，并结合实际生产环境中的案例（Jupiter/Kubernetes 部署场景），阐述由于存在大小写重复的环境变量而导致服务在每次部署时随机性读取错误配置的问题。

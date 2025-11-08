@@ -3,7 +3,8 @@ title: 致还在大学的你
 title_en: For You Who Are in College
 date: 2016-04-17 20:22:56
 updated: 2016-04-17 20:22:56
-tags: Life
+tags: 
+    - Life
 ---
 
 > 以下言论仅代表个人观点，如有雷同，不胜荣幸。

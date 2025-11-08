@@ -3,7 +3,11 @@ title: 如何修复 RuntimeBinderException
 title_en: How to Fix RuntimeBinderException
 date: 2023-04-13 20:27:39
 updated: 2023-04-13 20:27:39
-tags: C#, .NET, Dynamic, Anonymous Types
+tags: 
+    - C#
+    - .NET
+    - Dynamic
+    - Anonymous Types
 ---
 
 > 匿名类型在某些场景下使用起来还是比较方便，比如某个类型只会使用一次，那这个时候定义一个 Class 就没有多少意义，完全可以使用匿名类型来解决，但是在跨项目使用时，还是需要注意避免出现 RuntimeBinderException 问题

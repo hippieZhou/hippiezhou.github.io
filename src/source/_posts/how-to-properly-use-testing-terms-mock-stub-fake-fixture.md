@@ -3,7 +3,10 @@ title: 如何正确使用 Mock、Stub、Fake、Fixture 等测试名词
 title_en: "How to Properly Use Testing Terms: Mock, Stub, Fake, and Fixture"
 date: 2025-07-09 10:37:01
 updated: 2025-07-09 10:37:01
-tags: Testing, Unit Testing, Test Doubles
+tags: 
+    - Testing
+    - Unit Testing
+    - Test Doubles
 ---
 
 > 在编写测试代码时，我们经常听到 Mock、Stub、Fake、Fixture 等术语，但这些概念之间的区别和正确使用方法往往让人困惑。本文将从 Martin Fowler 的经典定义出发，结合实际代码示例，详细解释这些测试名词的含义、区别和使用场景，帮助开发者写出更清晰、更准确的测试代码。

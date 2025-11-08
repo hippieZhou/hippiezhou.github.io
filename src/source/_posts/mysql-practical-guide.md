@@ -3,7 +3,10 @@ title: MySQL 实用指南：命令、技巧与最佳实践
 title_en: "MySQL Practical Guide: Commands, Tips and Best Practices"
 date: 2017-12-20 21:31:00
 updated: 2017-12-20 21:31:00
-tags: MySQL, Database, SQL
+tags: 
+    - MySQL
+    - Database
+    - SQL
 ---
 
 > 本文是一份全面的 MySQL 实用指南，涵盖从环境配置到高级特性的完整内容。包括安装配置、数据库操作、用户权限管理、备份恢复、性能优化、事务管理、常用函数、视图存储过程等常用操作和最佳实践。适合 MySQL 开发者和数据库管理员作为日常参考手册使用。

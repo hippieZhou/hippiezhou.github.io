@@ -3,7 +3,10 @@ title: C# Task 异步编程最佳实践与实战技巧
 title_en: "C# Task Async Programming: Best Practices and Practical Guide"
 date: 2017-10-18 21:20:58
 updated: 2017-10-18 21:20:58
-tags: C#, Async Programming, Task
+tags: 
+    - C#
+    - Async Programming
+    - Task
 ---
 
 > C# 中 Task 异步编程的使用笔记，包括指数退避重试策略、超时处理、取消操作、进度汇报等常用模式和最佳实践。本文涵盖了异步编程中的常见场景和注意事项，帮助开发者编写更健壮的异步代码。

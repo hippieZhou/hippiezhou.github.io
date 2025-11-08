@@ -3,7 +3,11 @@ title: WPF 中的异步绑定：实现非阻塞数据加载
 title_en: "Async Binding in WPF: Implementing Non-Blocking Data Loading"
 date: 2017-04-18 14:05:39
 updated: 2017-04-18 14:05:39
-tags: WPF, Async, Data Binding, MVVM
+tags: 
+    - WPF
+    - Async
+    - Data Binding
+    - MVVM
 ---
 
 > 在 WPF 开发中，当需要通过数据绑定显示耗时较长的数据时，为了提升用户体验，需要确保 UI 不卡顿，并显示加载状态。本文介绍如何通过创建一个继承 `INotifyPropertyChanged` 的泛型类来实现异步绑定，让 UI 在数据加载过程中保持响应，并提供加载状态和错误处理。

@@ -3,7 +3,10 @@ title: WPF 样式深入解析：从基础到高级应用
 title_en: "Deep Dive into WPF Styles: From Basics to Advanced Applications"
 date: 2017-09-02 21:31:00
 updated: 2017-09-02 21:31:00
-tags: WPF, XAML, .NET
+tags: 
+    - WPF
+    - XAML
+    - .NET
 ---
 
 > WPF 中的样式（Style）是一种强大的机制，允许您定义控件的属性值并在多个控件之间共享。本文深入解析 WPF 样式系统，从基础用法到高级特性，包括样式定义、触发器、隐式样式、样式合并、主题样式以及换肤实现等核心概念和最佳实践。

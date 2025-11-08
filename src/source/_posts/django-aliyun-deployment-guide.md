@@ -3,7 +3,13 @@ title: 在阿里云上部署 Django 应用：完整部署指南
 title_en: "Deploy Django Application on Aliyun: Complete Deployment Guide"
 date: 2017-12-17 21:09:26
 updated: 2017-12-17 21:09:26
-tags: Django, Deployment, Nginx, Gunicorn, Aliyun, Linux
+tags: 
+    - Django
+    - Deployment
+    - Nginx
+    - Gunicorn
+    - Aliyun
+    - Linux
 ---
 
 > 本文详细介绍如何在阿里云服务器上部署 Django 应用，包括服务器初始化、环境配置、Nginx 配置、Gunicorn 部署、SSL 证书配置以及自动化部署等完整流程。适用于 Ubuntu/Debian 系统的生产环境部署。

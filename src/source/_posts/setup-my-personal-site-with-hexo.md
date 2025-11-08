@@ -3,7 +3,8 @@ title: 使用 Hexo 搭建个人网站
 title_en: Setup My Personal Site with Hexo
 date: 2016-07-01 12:43:22
 updated: 2016-07-01 12:43:22
-tags: Frontend
+tags: 
+    - Frontend
 ---
 
 > Hexo 是一个快速、简洁且高效的博客框架，使用 Node.js 驱动。本文介绍如何使用 Hexo 搭建个人博客网站，包括环境配置、主题安装和部署流程。

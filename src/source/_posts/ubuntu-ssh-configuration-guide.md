@@ -3,7 +3,12 @@ title: Ubuntu SSH 服务配置指南：从安装到安全加固
 title_en: "Ubuntu SSH Service Configuration Guide: From Installation to Security Hardening"
 date: 2021-10-17 12:43:22
 updated: 2021-10-17 12:43:22
-tags: SSH, Ubuntu, Linux, Security, Remote Access
+tags: 
+    - SSH
+    - Ubuntu
+    - Linux
+    - Security
+    - Remote Access
 ---
 
 > SSH（Secure Shell）是一种网络协议，用于安全地远程访问和管理 Linux 系统。Ubuntu 默认可能没有安装 SSH 服务器，需要手动安装和配置。本文详细介绍如何在 Ubuntu 上安装、配置和加固 SSH 服务，包括基本使用、密钥认证、安全配置和故障排查等完整内容。

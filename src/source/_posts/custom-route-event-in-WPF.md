@@ -3,7 +3,8 @@ title: WPF 中的自定义路由事件
 title_en: Custom Route Event in WPF
 date: 2017-11-28 21:37:04
 updated: 2017-11-28 21:37:04
-tags: WPF
+tags: 
+    - WPF
 ---
 
 > 在 WPF 中，路由事件是一种强大的事件机制，允许事件在元素树中向上或向下传播。本文介绍如何在 WPF 中创建自定义路由事件，包括事件注册、CLR 访问器和事件触发方法。

@@ -3,7 +3,11 @@ title: Kubernetes ConfigMap 与直接使用环境变量的区别
 title_en: Understanding the Differences Between Kubernetes ConfigMap and Direct Environment Variables
 date: 2025-11-08 22:58:15
 updated: 2025-11-08 22:58:15
-tags: Kubernetes, ConfigMap, Environment Variables, DevOps
+tags: 
+    - Kubernetes
+    - ConfigMap
+    - Environment Variables
+    - DevOps
 ---
 
 > 在 Kubernetes 中，配置管理是一个重要的主题。我们可以通过 ConfigMap 和直接使用环境变量（env）两种方式来管理应用配置，但它们有着本质的区别和不同的使用场景。本文将深入分析这两种方式的区别，帮助开发者根据实际需求选择最合适的配置管理方式。

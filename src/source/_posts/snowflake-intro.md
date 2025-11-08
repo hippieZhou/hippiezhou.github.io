@@ -3,7 +3,8 @@ title: Snowflake 简介
 title_en: Snowflake Intro
 date: 2025-01-15 11:19:29
 updated: 2025-01-15 11:19:29
-tags: Snowflake
+tags: 
+    - Snowflake
 ---
 
 > Snowflake 是一家基于云架构的数据公司，通过将数据存储与数据计算分离，为企业提供高性能、可扩展、按需配置的数据服务。本文介绍 Snowflake 的基本概念、核心功能和主要应用场景。

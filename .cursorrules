@@ -10,7 +10,10 @@ title: 中文标题
 title_en: "English Title"  # Use quotes if contains colon (:)
 date: YYYY-MM-DD HH:MM:SS
 updated: YYYY-MM-DD HH:MM:SS  # Usually same as date
-tags: Tag1, Tag2, Tag3  # Comma-separated, with spaces after commas
+tags: 
+    - Tag1
+    - Tag2
+    - Tag3
 ---
 ```
 
@@ -21,8 +24,14 @@ tags: Tag1, Tag2, Tag3  # Comma-separated, with spaces after commas
    - Example: `title_en: "How to Properly Use Testing Terms: Mock, Stub, Fake, and Fixture"`
 3. **date**: Format `YYYY-MM-DD HH:MM:SS` (required)
 4. **updated**: Format `YYYY-MM-DD HH:MM:SS`, usually same as date (required)
-5. **tags**: Comma-separated tags, with spaces after commas (required)
-   - Example: `tags: ASP.NET Core, Kubernetes, DevOps`
+5. **tags**: YAML list format, each tag on a new line with `-` prefix (required)
+   - Example:
+     ```yaml
+     tags: 
+         - ASP.NET Core
+         - Kubernetes
+         - DevOps
+     ```
 
 ## Article Structure
 
@@ -117,7 +126,7 @@ tags: Tag1, Tag2, Tag3  # Comma-separated, with spaces after commas
 ### YAML Front Matter:
 - ❌ Missing quotes around `title_en` when it contains `:`
 - ❌ Incorrect date format (should be `YYYY-MM-DD HH:MM:SS`)
-- ❌ Tags without spaces after commas (should have spaces: Tag1, Tag2, Tag3)
+- ❌ Tags not in YAML list format (should use `-` prefix for each tag)
 - ❌ Missing required fields
 
 ### Code Blocks:
@@ -154,7 +163,10 @@ title: 文章标题
 title_en: "Article Title"  # Quote if contains :
 date: YYYY-MM-DD HH:MM:SS
 updated: YYYY-MM-DD HH:MM:SS
-tags: Tag1, Tag2, Tag3
+tags: 
+    - Tag1
+    - Tag2
+    - Tag3
 ---
 ```
 
@@ -165,7 +177,10 @@ title: 文章标题
 title_en: "Article Title"
 date: YYYY-MM-DD HH:MM:SS
 updated: YYYY-MM-DD HH:MM:SS
-tags: Tag1, Tag2, Tag3
+tags: 
+    - Tag1
+    - Tag2
+    - Tag3
 ---
 
 > 文章摘要，说明文章要解决的问题和主要内容。

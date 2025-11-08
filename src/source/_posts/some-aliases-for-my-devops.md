@@ -3,7 +3,8 @@ title: 我的 DevOps 常用别名
 title_en: Some Aliases for My DevOps
 date: 2025-06-29 15:36:41
 updated: 2025-06-29 15:36:41
-tags: devops
+tags: 
+    - devops
 ---
 
 > 本文介绍我在日常开发和运维中常用的终端工具配置与别名，包括 Vim、PowerShell、Bash/WSL 等。

@@ -3,7 +3,11 @@ title: EF Core 实用指南：最佳实践与常见问题
 title_en: "EF Core Practical Guide: Best Practices and Common Issues"
 date: 2024-06-06 14:22:52
 updated: 2024-06-06 14:22:52
-tags: EFCore, .NET, ORM, Entity Framework
+tags: 
+    - EFCore
+    - .NET
+    - ORM
+    - Entity Framework
 ---
 
 > EF Core 是微软官方维护的 ORM 框架，支持多种数据库类型（包括关系型和非关系型）。在实际项目中，如果采用不恰当的使用方式，极易导致代码复杂度提升、服务性能下降。本文总结了 EF Core 使用过程中的实现细节、最佳实践和常见问题，帮助开发者根据实际场景选择合适的解决方案。
