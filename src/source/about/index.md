@@ -4,114 +4,133 @@ date: 2024-09-05 20:20:53
 type: "about"
 ---
 
-> Expert, 8+ years of experience in backend and desktop application development.
+# 👋 About Me
 
-# 👋 Introduction
+> Expert Backend & Desktop Application Developer | 9+ Years Experience | Specializing in .NET Technologies & DevOps
 
-Hi there! I'm a **creative developer** from China, specializing in **backend development** and **DevOps** at **[Thoughtworks](https://www.thoughtworks.com/)**. I have been working for Thoughtworks since 2012, and with over **8 years** of experience in **.NET-related technologies**, I enjoy turning complex problems into simple, elegant solutions.
-
-Currently, I'm working on a **legacy application migration** project, aiming to transition it to the **.NET 8** platform while helping our clients achieve greater business value.
+Hi there! I'm a **creative developer** from China, currently working as a **Consultant** at **[Thoughtworks](https://www.thoughtworks.com/)**. With over **8 years** of experience in **.NET-related technologies**, I specialize in backend development, desktop applications, and DevOps practices. I enjoy turning complex problems into simple, elegant solutions and helping organizations modernize their legacy systems.
 
 ---
 
-# 💼 Work Experience
+## 💼 Work Experience
 
-### 🏢 [Thoughtworks](https://www.thoughtworks.com/)
+### Consultant | Thoughtworks
+**Feb 2022 – Present**
 
-**Consultant**  
-_Feb 2022 – Present_
+- Leading **legacy application migration** projects, transitioning systems to **.NET 8** platform
+- Building scalable and high-performance web applications using **ASP.NET Core**
+- Driving DevOps practices to improve deployment efficiency and system reliability
+- Collaborating with cross-functional teams (onshore and offshore) to deliver high-quality solutions
+- Applying **Domain-Driven Design (DDD)** and **Test-Driven Development (TDD)** principles
 
-- Focusing on **ASP.NET Core** for building scalable and high-performance web applications.
-- Leading the transformation and modernization of legacy systems.
-- Collaborating with cross-functional teams both onshore and offshore to deliver high-quality solutions.
-- Driving DevOps practices to improve deployment efficiency and system reliability.
-
----
-
-### 🏢 [Ming Yuan Cloud Group Holdings Limited](https://www.mingyuanyun.com/)
-
-**.NET Backend Developer**  
-_Jul 2020 – Feb 2022_
-
-- Developed ERP systems for the real estate industry.
-- Focused on both client-side and server-side development using .NET technologies.
-- Gained extensive experience in enterprise software development.
+**Key Achievements:**
+- Successfully modernized legacy systems to .NET Core/.NET 8
+- Implemented microservices architecture with containerization (Docker & Kubernetes)
+- Established CI/CD pipelines using Azure DevOps, Buildkite, and GitHub Actions
 
 ---
 
-### 🏢 Worked in Beijing
+### .NET Backend Developer | Ming Yuan Cloud Group Holdings Limited
+**Jul 2020 – Feb 2022**
 
-**WPF Developer**  
-_Jun 2016 – Jul 2020_
+- Developed **ERP systems** for the real estate industry
+- Worked on both client-side and server-side development using .NET technologies
+- Gained extensive experience in enterprise software development and business logic implementation
 
-- Designed and developed video surveillance products.
-- Specialized in WPF-based application development for traditional industries.
-
----
-
-### 🏢 Worked in Wuhan
-
-**UAP Developer (Intern)**  
-_Jun 2015 – Jun 2016_
-
-- Worked as an intern in a game company.
-- Gained hands-on experience in software development and teamwork.
+**Key Achievements:**
+- Delivered enterprise-level ERP solutions for real estate management
+- Optimized database access layers using Entity Framework Core
 
 ---
 
-<!--
+### WPF Developer | Beijing
+**Jun 2016 – Jul 2020**
 
-# 🚀 What I'm Doing Now
+- Designed and developed **video surveillance products** using WPF
+- Specialized in desktop application development for traditional industries
+- Implemented complex UI/UX designs and real-time data processing
 
-# 🏅 Certifications
-
-- **Certified Kubernetes Administrator (CKA)**
-  Credential ID: [Your Credential ID]
-  Issued by CNCF in **[Year]**
-
----
-
-# 🎓 Education
-
-- **2012 – 2016**: Anyang Normal University
-  **Bachelor's Degree in Software Engineering**
+**Key Achievements:**
+- Built production-ready video surveillance systems
+- Developed custom WPF controls and data binding solutions
 
 ---
 
--->
+### UAP Developer (Intern) | Wuhan
+**Jun 2015 – Jun 2016**
 
-# 🌟 Skills
-
-## **Frameworks & Technologies**
-
-- **ASP.NET Core**: Proficient, with hands-on project experience in building high-performance web APIs and enterprise applications.
-- **WPF & WinUI**: Extensive experience in modern desktop application development, including video surveillance systems.
-- **Entity Framework Core**: Skilled in designing and optimizing database access layers.
-- **Blazor**: Experience with .NET-based frontend development.
-
-## **DevOps**
-
-- **Kubernetes**: Familiar with container orchestration and managing microservices architecture.
-- **Azure DevOps & CircleCI**: Used for CI/CD pipeline setup and management in real-world projects.
-- **GitHub Actions**: Used for workflow automation and code management.
-
-## **Architecture & Design**
-
-- **Microservices Architecture**: Hands-on experience in service decomposition, communication, and governance.
-- **RESTful API**: Skilled in designing and implementing APIs following industry best practices.
-- **CQRS & Event Sourcing**: Applied in scenarios requiring high concurrency and complex business logic.
-- **Test-Driven Development (TDD)**: Applied TDD principles in multiple projects to ensure code quality and maintainability. Developed unit tests and integration tests before implementation, resulting in fewer bugs and faster delivery cycles.
-- **Domain-Driven Design (DDD)**: Used for modeling and implementing complex business systems.
-
-## **Others**
-
-- **Legacy System Modernization**: Led the migration of legacy systems to modern frameworks like **.NET Core**, improving performance, scalability, and maintainability. Integrated containerization using **Docker** and **Kubernetes** to streamline deployment and enhance system reliability.
-- **ERP Systems Development**: Participated in developing ERP systems for **the real estate industry**, familiar with enterprise application requirements.
-- **Agile Development**: Familiar with **Scrum** and **Jira**, skilled in cross-functional team collaboration.
+- Worked as an intern in a game company
+- Gained hands-on experience in software development and agile teamwork
+- Participated in game development projects using Unity and C#
 
 ---
 
-# 📫 Get in Touch
+## 🛠️ Technical Skills
 
-- **GitHub**: [hippiezhou](https://github.com/hippiezhou)
-- **博客园**: [hippie's Blog](https://www.cnblogs.com/hippiezhou)
+### Backend Development
+- **ASP.NET Core**: Proficient in building high-performance web APIs and enterprise applications
+- **Entity Framework Core**: Skilled in designing and optimizing database access layers
+- **.NET Framework / .NET Core / .NET 8**: Extensive experience across multiple versions
+- **RESTful API Design**: Following industry best practices
+
+### Desktop Development
+- **WPF**: Extensive experience in modern desktop application development
+- **WinUI3**: Experience with latest Windows UI framework
+- **MVVM Pattern**: Applied in multiple desktop projects
+
+### DevOps & Infrastructure
+- **Kubernetes**: Container orchestration and microservices management
+- **Docker**: Containerization and deployment
+- **CI/CD**: Azure DevOps, CircleCI, GitHub Actions
+- **Git**: Version control and collaborative development
+
+### Architecture & Design Patterns
+- **Microservices Architecture**: Service decomposition, communication, and governance
+- **Domain-Driven Design (DDD)**: Complex business system modeling
+- **CQRS & Event Sourcing**: High concurrency and complex business logic scenarios
+- **Test-Driven Development (TDD)**: Unit and integration testing
+- **Legacy System Modernization**: Migration strategies and implementation
+
+### Frontend & Others
+- **Blazor**: .NET-based frontend development
+- **JavaScript/TypeScript**: Frontend development experience
+- **Agile/Scrum**: Familiar with agile methodologies and Jira
+
+---
+
+## 🎓 Education
+
+**Bachelor's Degree in Software Engineering**  
+Anyang Normal University | 2012 – 2016
+
+---
+
+## 🚀 Current Focus
+
+Currently working on **legacy application migration** projects, helping clients transition to **.NET 8** platform while achieving greater business value. Focus areas include:
+
+- Modernizing legacy systems with microservices architecture
+- Implementing containerization strategies (Docker & Kubernetes)
+- Establishing robust CI/CD pipelines
+- Applying DDD and TDD practices for better code quality
+
+---
+
+## 📝 Blog & Writing
+
+I maintain a technical blog where I share insights on:
+- .NET development best practices
+- DevOps tools and workflows
+- System architecture and design patterns
+- Legacy system modernization strategies
+
+**博客园**: [hippie's Blog(out of date)](https://www.cnblogs.com/hippiezhou)
+
+---
+
+## 📫 Contact
+
+- **GitHub**: [@hippiezhou](https://github.com/hippiezhou)
+- **Email**: [@hippiezhou](mailto:hippiezhou@outlook.com)
+
+---
