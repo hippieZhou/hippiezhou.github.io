@@ -1,5 +1,5 @@
 ---
-title: Custom scaling capabilities in WPF
+title: Custom Scaling Capabilities in WPF
 date: 2017-05-16 21:37:04
 updated: 2017-05-16 21:37:04
 tags: WPF

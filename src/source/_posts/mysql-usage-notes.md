@@ -1,5 +1,5 @@
 ---
-title: MySQL usage notes
+title: MySQL Usage Notes
 date: 2017-12-20 21:31:00
 updated: 2017-12-20 21:31:00
 tags: MySQL
@@ -7,7 +7,7 @@ tags: MySQL
 
 # 环境配置
 
-```shell
+```bash
 # 安装
 sudo apt-get install mysql-client mysql-server
 
@@ -26,7 +26,7 @@ mysql -u root -p
 
 # 相关操作
 
-```Shell
+```bash
 # 查看当前所有数据库
 show databases;
 

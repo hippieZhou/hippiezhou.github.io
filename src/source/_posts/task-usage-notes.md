@@ -1,5 +1,5 @@
 ---
-title: Task usage notes
+title: Task Usage Notes
 date: 2017-10-18 21:20:58
 updated: 2017-10-18 21:20:58
 tags: C#
@@ -124,6 +124,6 @@ public void DoLongOperation()
 
 2. Task.FromResult 只能提供结果正确的同步 Task 对象。如果要返回的 Task 对象有一个其它类型的结果（例如以 NotImplementedException 结束的 Task 对象），就得自行创建使用 NotImplementedException 的辅助方法。
 
-# 参考：
+# 相关参考
 
 1. 《C#并发编程经典实例》

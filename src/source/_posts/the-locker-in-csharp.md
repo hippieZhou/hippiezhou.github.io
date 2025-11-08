@@ -1,5 +1,5 @@
 ---
-title: The locker in C#
+title: The Locker in C#
 date: 2017-02-28 21:41:39
 updated: 2017-02-20 21:31:00
 tags: C#

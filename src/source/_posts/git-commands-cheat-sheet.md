@@ -1,5 +1,5 @@
 ---
-title: Git commands cheat sheet
+title: Git Commands Cheat Sheet
 date: 2022-02-27 20:55:55
 updated: 2022-02-27 20:55:55
 tags: Git
@@ -103,7 +103,7 @@ git fetch --all --prune
 
 try to create or update `~/.ssh/config` as followed:
 
-```shell
+```bash
 Host github.com
  Hostname ssh.github.com
  Port 443
@@ -115,7 +115,7 @@ Then, run the command `ssh -T git@github.com` to confirm if the issue is fixed.
 
 try to open your git config by `git config -e (--global)`, and then modify relevant configuration:
 
-```shell
+```bash
 [remote "origin"]
     url = https://git.example.com/example.git (you can omit this URL)
     fetch = +refs/heads/*:refs/remotes/origin/*
@@ -125,7 +125,7 @@ after that, you can run `git fetch --all`.
 
 ## Generate or apply patch file
 
-```shell  
+```bash
 # Creating a patch from unstaged changes
 git diff > changes.patch  
 # Creating a patch from staged changes

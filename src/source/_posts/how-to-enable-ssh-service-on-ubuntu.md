@@ -1,5 +1,5 @@
 ---
-title: How to enable SSH service on Ubuntu
+title: How to Enable SSH Service on Ubuntu
 date: 2021-10-17 12:43:22
 updated: 2021-10-17 12:43:22
 tags: SSH
@@ -41,7 +41,7 @@ ssh 的配置文件默认在
 
 使用方式 直接在终端输入：
 
-```bash  
+```bash
 # 以 root 身份登陆
 ssh root@[your-remote-ip]
 ```

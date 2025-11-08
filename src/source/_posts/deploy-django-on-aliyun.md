@@ -9,7 +9,7 @@ tags: Django
 
 购买域名和域名解析以及购买云服务器这些操作方法阿里云都有相应提示，按提示操作即可。这里需要指出的一点时，当服务器购买成功后请进入该实例执行一次 **重新初始化磁盘** 操作 (需要先停止该服务器) 确保系统镜像的干净，在执行该操作的时候，网页会提示你设置远程登陆的密码。服务器启动成功后远程登陆你的云服务器并更新系统
 
-```shell
+```bash
 ssh root@ip
 password
 
@@ -27,7 +27,7 @@ su - hippieZhou
 
 # 搭建 Nginx 服务器：
 
-```shell
+```bash
 # 执行该操作后无误后，访问公网IP即可看到 Nginx 的默认页面
 apt-get install Nginx
 
@@ -40,7 +40,7 @@ ps -ef|grep nginx
 
 # 安装 Mysql 数据库：
 
-```shell
+```bash
 # 测试本机是否已安装 mysql
 netstat -tap|grep mysql
 
@@ -65,7 +65,7 @@ sudo mysqladmin -u root password newpassword
 
 # 部署代码：
 
-```shell
+```bash
 # 安装虚拟环境并启动
 sudo apt-get install git python3 python3-pip
 sudo pip3 install virtualenv
@@ -107,7 +107,7 @@ python3 manage.py shell
 
 在/etc/nginx/site-available/下创建一个本项目对应的配置文件
 
-```shell
+```bash
 /etc/nginx/sites-available/www.hippiezhou.com
 server {
     charset utf-8;
@@ -127,14 +127,14 @@ server {
 
 创建该配置的连接文件到sites-enabled目录下，删除该目录中的default链接
 
-```shell
+```bash
 ln -s /etc/nginx/sites-available/www.hippiezhou.fun /etc/nginx/sites-enabled/www.hippiezhou.fun
 rm /etc/nginx/sites-enabled/default
 ```
 
 # 通过 Gunicorn 部署代码：
 
-```shell
+```bash
 # 在虚拟环境中安装Gunicorn包
 pip3 install Gunicorn
 
@@ -147,7 +147,7 @@ gunicorn --bind unix:/tmp/www.hippiezhou.fun.socket website.wsgi:application
 自动启动 Gunicorn
 在 /etc/init/下创建一个自启动脚本gunicorn-www.hippiezhou.fun.conf
 
-```shell
+```bash
 start on net-device-up
 stop on shutdown
 
@@ -161,18 +161,18 @@ exec ../env/bin/gunicorn --bind unix:/tmp/www.hippiezhou.fun.socket website.wsgi
 
 启动脚本
 
-```shell
+```bash
 sudo start gunicorn-www.hippiezhou.fun
 ```
 
 以后更新代码后只需要执行下面操作即可
 
-```shell
+```bash
 sudo service nginx reload
 sudo restart gunicorn-www.hippiezhou.fun
 ```
 
-# 参考链接：
+# 相关参考
 
 1. [使用 Nginx 和 Gunicorn 部署 Django 博客](https://www.zmrenwu.com/post/20/)
 1. [Django教程](http://www.liujiangblog.com/course/django/2)

@@ -1,5 +1,5 @@
 ---
-title: Rapid your python develop experience
+title: Rapid Your Python Develop Experience
 date: 2025-01-17 15:21:50
 updated: 2025-01-17 15:21:50
 tags: Python
@@ -103,6 +103,6 @@ python versions
 python version
 ```
 
-# Conslusion
+# Conclusion
 
 # References

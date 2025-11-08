@@ -1,5 +1,5 @@
 ---
-title: Custom route event in WPF
+title: Custom Route Event in WPF
 date: 2017-11-28 21:37:04
 updated: 2017-11-28 21:37:04
 tags: WPF
@@ -36,7 +36,7 @@ public class MyButtonSimple: Button
 }
 ```
 
-```XAMl
+```XAML
 <Window>
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -56,7 +56,7 @@ public class MyButtonSimple: Button
 </Window>
 ```
 
-# 参考文档：
+# 相关参考
 
 [https://docs.microsoft.com/zh-cn/dotnet/framework/wpf/advanced/how-to-create-a-custom-routed-event](https://docs.microsoft.com/zh-cn/dotnet/framework/wpf/advanced/how-to-create-a-custom-routed-event)
 

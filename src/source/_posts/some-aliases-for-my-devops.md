@@ -1,5 +1,5 @@
 ---
-title: Some aliases for my devops
+title: Some Aliases for My DevOps
 date: 2025-06-29 15:36:41
 updated: 2025-06-29 15:36:41
 tags: devops

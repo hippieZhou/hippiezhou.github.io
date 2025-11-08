@@ -1,5 +1,5 @@
 ---
-title: How to fix RuntimeBinderException
+title: How to Fix RuntimeBinderException
 date: 2023-04-13 20:27:39
 updated: 2023-04-13 20:27:39
 tags: C#

@@ -1,5 +1,5 @@
 ---
-title: Async binding in WPF
+title: Async Binding in WPF
 date: 2017-04-18 21:17:01
 updated: 2017-04-18 14:05:39
 tags: WPF
@@ -113,6 +113,6 @@ public class BooleanToVisibilityConverter : IValueConverter
 
 执行上述操作后，运行该程序，会发现程序在运行 5 秒之后显示由显示 **loading** 变为 **hippieZhou**。
 
-参考：
+# 相关参考
 
 1. 《C#并发编程经典实例》

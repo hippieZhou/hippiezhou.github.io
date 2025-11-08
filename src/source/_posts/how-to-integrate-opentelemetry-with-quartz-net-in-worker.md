@@ -1,11 +1,11 @@
 ---
-title: How to integrate Opentelemetry with Quartz.net in Worker
+title: How to Integrate OpenTelemetry with Quartz.net in Worker
 date: 2024-05-08 13:57:49
 updated: 2024-05-08 13:57:49
-tags: Opentelemetry
+tags: OpenTelemetry
 ---
 
-> 在 .NET Core 的 Worker 类型项目中，**Opentelemetry** 并没有为其提供标准的 `Instrumentation`，如果我们的项目中以 `Quartz.net` 作为我们默认的 Schedule Engine 的话，这个时候就需要考虑需要如何将两者即成到一起。
+> 在 .NET Core 的 Worker 类型项目中，**OpenTelemetry** 并没有为其提供标准的 `Instrumentation`，如果我们的项目中以 `Quartz.net` 作为我们默认的 Schedule Engine 的话，这个时候就需要考虑需要如何将两者即成到一起。
 
 # 安装依赖包
 

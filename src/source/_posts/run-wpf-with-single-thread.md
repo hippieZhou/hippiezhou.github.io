@@ -1,5 +1,5 @@
 ---
-title: Run WPF with single thread
+title: Run WPF with Single Thread
 date: 2017-07-19 21:20:58
 updated: 2017-07-19 21:20:58
 tags: WPF

@@ -1,5 +1,5 @@
 ---
-title: For you who are in college
+title: For You Who Are in College
 date: 2016-04-17 20:22:56
 updated: 2016-04-17 20:22:56
 tags: Life

@@ -1,5 +1,5 @@
 ---
-title: How to keep payload process in ASP.NET Core consistent with ASP.NET
+title: How to Keep Payload Process in ASP.NET Core Consistent with ASP.NET
 date: 2023-07-25 22:15:59
 updated: 2023-07-25 22:15:59
 tags: ASP.NET Core
