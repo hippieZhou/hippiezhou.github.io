@@ -1,5 +1,6 @@
 ---
-title: A Hasty Graduation Trip
+title: 匆忙的毕业旅行
+title_en: A Hasty Graduation Trip
 date: 2016-05-13 14:05:39
 updated: 2016-05-13 14:05:39
 tags: Life

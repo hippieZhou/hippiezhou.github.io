@@ -1,6 +1,7 @@
 ---
-title: Async Binding in WPF
-date: 2017-04-18 21:17:01
+title: WPF 中的异步绑定
+title_en: Async Binding in WPF
+date: 2017-04-18 14:05:39
 updated: 2017-04-18 14:05:39
 tags: WPF
 ---

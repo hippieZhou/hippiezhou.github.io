@@ -1,5 +1,6 @@
 ---
-title: Some Aliases for My DevOps
+title: 我的 DevOps 常用别名
+title_en: Some Aliases for My DevOps
 date: 2025-06-29 15:36:41
 updated: 2025-06-29 15:36:41
 tags: devops

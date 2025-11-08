@@ -1,5 +1,6 @@
 ---
-title: For You Who Are in College
+title: 致还在大学的你
+title_en: For You Who Are in College
 date: 2016-04-17 20:22:56
 updated: 2016-04-17 20:22:56
 tags: Life

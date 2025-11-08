@@ -1,5 +1,6 @@
 ---
-title: Rapid Your Python Develop Experience
+title: 提升你的 Python 开发体验
+title_en: Rapid Your Python Develop Experience
 date: 2025-01-17 15:21:50
 updated: 2025-01-17 15:21:50
 tags: Python

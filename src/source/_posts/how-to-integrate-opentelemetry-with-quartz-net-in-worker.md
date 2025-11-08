@@ -1,5 +1,6 @@
 ---
-title: How to Integrate OpenTelemetry with Quartz.net in Worker
+title: 如何在 Worker 中集成 OpenTelemetry 与 Quartz.net
+title_en: How to Integrate OpenTelemetry with Quartz.net in Worker
 date: 2024-05-08 13:57:49
 updated: 2024-05-08 13:57:49
 tags: OpenTelemetry

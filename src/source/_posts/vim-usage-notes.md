@@ -1,5 +1,6 @@
 ---
-title: Vim Usage Notes
+title: Vim 使用笔记
+title_en: Vim Usage Notes
 date: 2017-01-07 21:31:00
 updated: 2017-01-07 21:31:00
 tags: Vim

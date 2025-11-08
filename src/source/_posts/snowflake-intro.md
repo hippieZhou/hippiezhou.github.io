@@ -1,5 +1,6 @@
 ---
-title: Snowflake Intro
+title: Snowflake 简介
+title_en: Snowflake Intro
 date: 2025-01-15 11:19:29
 updated: 2025-01-15 11:19:29
 tags: Snowflake

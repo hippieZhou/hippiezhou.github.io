@@ -1,5 +1,6 @@
 ---
-title: MEF Usage Notes
+title: MEF 使用笔记
+title_en: MEF Usage Notes
 date: 2022-02-17 21:21:18
 updated: 2022-02-17 21:21:18
 tags: WPF

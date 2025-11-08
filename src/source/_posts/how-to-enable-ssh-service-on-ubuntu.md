@@ -1,5 +1,6 @@
 ---
-title: How to Enable SSH Service on Ubuntu
+title: 如何在 Ubuntu 上启用 SSH 服务
+title_en: How to Enable SSH Service on Ubuntu
 date: 2021-10-17 12:43:22
 updated: 2021-10-17 12:43:22
 tags: SSH

@@ -1,5 +1,6 @@
 ---
-title: MySQL Usage Notes
+title: MySQL 使用笔记
+title_en: MySQL Usage Notes
 date: 2017-12-20 21:31:00
 updated: 2017-12-20 21:31:00
 tags: MySQL

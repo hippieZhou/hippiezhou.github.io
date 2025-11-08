@@ -1,5 +1,6 @@
 ---
-title: Git Commands Cheat Sheet
+title: Git 命令速查表
+title_en: Git Commands Cheat Sheet
 date: 2022-02-27 20:55:55
 updated: 2022-02-27 20:55:55
 tags: Git

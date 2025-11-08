@@ -1,5 +1,6 @@
 ---
-title: How to Use Multiple GitHub Accounts on Mac
+title: 如何在 Mac 上使用多个 GitHub 账户
+title_en: How to Use Multiple GitHub Accounts on Mac
 date: 2024-09-06 09:21:42
 updated: 2024-09-06 09:21:42
 tags: Git

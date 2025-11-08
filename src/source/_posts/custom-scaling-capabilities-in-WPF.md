@@ -1,5 +1,6 @@
 ---
-title: Custom Scaling Capabilities in WPF
+title: WPF 中的自定义缩放能力
+title_en: Custom Scaling Capabilities in WPF
 date: 2017-05-16 21:37:04
 updated: 2017-05-16 21:37:04
 tags: WPF

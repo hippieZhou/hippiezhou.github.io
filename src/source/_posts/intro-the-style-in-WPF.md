@@ -1,5 +1,6 @@
 ---
-title: Intro the Style in WPF
+title: WPF 中的样式介绍
+title_en: Intro the Style in WPF
 date: 2017-09-02 21:31:00
 updated: 2017-09-02 21:31:00
 tags: WPF

@@ -1,5 +1,6 @@
 ---
-title: How to Keep Payload Process in ASP.NET Core Consistent with ASP.NET
+title: 如何在 ASP.NET Core 中保持与 ASP.NET 一致的 Payload 处理
+title_en: How to Keep Payload Process in ASP.NET Core Consistent with ASP.NET
 date: 2023-07-25 22:15:59
 updated: 2023-07-25 22:15:59
 tags: ASP.NET Core

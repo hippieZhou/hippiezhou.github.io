@@ -1,5 +1,6 @@
 ---
-title: Setup My Personal Site with Hexo
+title: 使用 Hexo 搭建个人网站
+title_en: Setup My Personal Site with Hexo
 date: 2016-07-01 12:43:22
 updated: 2016-07-01 12:43:22
 tags: Frontend

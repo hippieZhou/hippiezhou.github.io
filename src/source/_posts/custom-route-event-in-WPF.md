@@ -1,5 +1,6 @@
 ---
-title: Custom Route Event in WPF
+title: WPF 中的自定义路由事件
+title_en: Custom Route Event in WPF
 date: 2017-11-28 21:37:04
 updated: 2017-11-28 21:37:04
 tags: WPF

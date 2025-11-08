@@ -1,5 +1,6 @@
 ---
-title: How to Make ItemsView Support IncrementalLoading in WinUI3
+title: 如何在 WinUI3 中让 ItemsView 支持 IncrementalLoading
+title_en: How to Make ItemsView Support IncrementalLoading in WinUI3
 date: 2024-09-22 21:40:01
 updated: 2024-09-22 21:40:01
 tags: WinUI3

@@ -1,5 +1,6 @@
 ---
-title: Deploy Django on Aliyun
+title: 在阿里云上部署 Django
+title_en: Deploy Django on Aliyun
 date: 2017-12-17 21:09:26
 updated: 2017-12-17 21:09:26
 tags: Django

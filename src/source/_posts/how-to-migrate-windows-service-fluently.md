@@ -1,5 +1,6 @@
 ---
-title: How to Migrate Windows Service Fluently
+title: 如何优雅地迁移 Windows Service
+title_en: How to Migrate Windows Service Fluently
 date: 2022-12-23 09:54:27
 updated: 2022-12-23 09:54:27
 tags: ASP.NET Core

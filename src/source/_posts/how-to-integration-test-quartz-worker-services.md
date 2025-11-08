@@ -1,5 +1,6 @@
 ---
-title: How to Elegantly Perform Integration Testing for Quartz Worker Services
+title: 如何优雅地对 Quartz Worker 服务进行集成测试
+title_en: How to Elegantly Perform Integration Testing for Quartz Worker Services
 date: 2025-11-08 21:56:13
 updated: 2025-11-08 21:56:13
 tags: Quartz.NET, Testing, Integration Testing
