@@ -1,8 +1,8 @@
 ---
 title: Kubernetes ConfigMap 与直接使用环境变量的区别
 title_en: Understanding the Differences Between Kubernetes ConfigMap and Direct Environment Variables
-date: 2025-11-09 22:58:15
-updated: 2025-11-09 22:58:15
+date: 2025-11-08 22:58:15
+updated: 2025-11-08 22:58:15
 tags: Kubernetes, ConfigMap, Environment Variables, DevOps
 ---
 

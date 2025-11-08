@@ -1,161 +1,365 @@
 ---
-title: WPF 中的样式介绍
-title_en: Intro the Style in WPF
+title: WPF 样式深入解析：从基础到高级应用
+title_en: "Deep Dive into WPF Styles: From Basics to Advanced Applications"
 date: 2017-09-02 21:31:00
 updated: 2017-09-02 21:31:00
-tags: WPF
+tags: WPF, XAML, .NET
 ---
 
-# 示例
+> WPF 中的样式（Style）是一种强大的机制，允许您定义控件的属性值并在多个控件之间共享。本文深入解析 WPF 样式系统，从基础用法到高级特性，包括样式定义、触发器、隐式样式、样式合并、主题样式以及换肤实现等核心概念和最佳实践。
+
+# 一、样式基础
+
+## 1.1 什么是样式（Style）
+
+WPF 中的样式（Style）是一种强大的机制，允许您定义控件的属性值并在多个控件之间共享。Style 作为属性、资源和事件的批处理，提供了一种便捷的方式来对控件进行快速设置。
+
+### 使用样式的好处
+
+- ✅ **统一风格**：将控件的通用设置抽取为 Style，使控件具有统一的风格
+- ✅ **易于维护**：修改 Style 中的属性值可以方便地作用在所有应用该 Style 的控件上
+- ✅ **灵活切换**：可以为同一类型控件定义多个 Style，通过替换 Style 来方便地更改控件的样式
+
+## 1.2 基本示例
 
 ```XAML
-<Window>
+<Window x:Class="WpfApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.Resources>
+            <!-- 定义样式 -->
             <Style TargetType="{x:Type Button}" x:Key="ButtonStyle">
-                <Setter Property="Height" Value="22"/>
-                <Setter Property="Width" Value="60"/>
+                <Setter Property="Height" Value="30"/>
+                <Setter Property="Width" Value="100"/>
+                <Setter Property="Margin" Value="5"/>
             </Style>
         </Grid.Resources>
-        <Button Content="Button" Style="{StaticResource ButtonStyle}"/>
-        <Button Content="Button" Style="{StaticResource ButtonStyle}" Margin="156,144,286,145" />
+        
+        <!-- 应用样式 -->
+        <Button Content="按钮1" Style="{StaticResource ButtonStyle}"/>
+        <Button Content="按钮2" Style="{StaticResource ButtonStyle}"/>
     </Grid>
 </Window>
 ```
 
-Style作为属性，资源，事件的批处理，它提供了一种捷径来对控件进行快速设置，使用Style的好处有二：
+## 1.3 Style 的元素组成
 
-> 把一些控件的通用设置抽出来变成Style，使这些控件具有统一的风格，修改Style中的属性值可以方便的作用在所有应用该Style的控件上。可以对同一类型控件定义多个Style，通过替换Style来方便的更改控件的样式。
+一个完整的 Style 可以包含以下元素：
 
-# Style的元素
+- **Setter**：设置属性的值
+- **EventSetter**：设置事件处理器
+- **Trigger**：基于条件改变属性值
+- **Resources**：样式内部的资源字典
+
+### 示例：包含所有元素的样式
 
 ```XAML
-<Window>
+<Window x:Class="WpfApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="450" Width="800">
     <Window.Resources>
         <Style TargetType="{x:Type Button}" x:Key="ButtonStyle">
+            <!-- 样式内部资源 -->
             <Style.Resources>
                 <SolidColorBrush x:Key="brush" Color="Yellow"/>
             </Style.Resources>
-            <Setter Property="Height" Value="22"/>
-            <Setter Property="Width" Value="60"/>
+            
+            <!-- Setter：设置属性值 -->
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Width" Value="100"/>
+            
+            <!-- EventSetter：设置事件处理器 -->
             <EventSetter Event="Loaded" Handler="Button_Loaded"/>
         </Style>
     </Window.Resources>
-    <x:Code>
-        <![CDATA[
-            void Button_Loaded(object sender, RoutedEventArgs e)
-            {
-                MessageBox.Show((sender as Button).Name + " Loaded");
-            }
-        ]]>
-    </x:Code>
+    
     <Grid>
-        <Button x:Name="button1" Style="{StaticResource ButtonStyle}" Background="{DynamicResource brush}"/>
-        <Button x:Name="button2" Style="{StaticResource ButtonStyle}" Background="{DynamicResource brush}" Margin="156,144,286,145" />
+        <Button x:Name="button1" 
+                Style="{StaticResource ButtonStyle}" 
+                Background="{DynamicResource brush}"/>
+        <Button x:Name="button2" 
+                Style="{StaticResource ButtonStyle}" 
+                Background="{DynamicResource brush}"/>
     </Grid>
 </Window>
 ```
 
-# Trigger
+**后台代码**：
+
+```C#
+using System.Windows;
+using System.Windows.Controls;
+
+namespace WpfApp
+{
+    public partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+
+        private void Button_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button button)
+            {
+                MessageBox.Show($"{button.Name} Loaded");
+            }
+        }
+    }
+}
+```
+
+## 1.4 触发器（Trigger）
+
+触发器允许您根据条件动态改变控件的属性值。WPF 定义了五种类型的触发器：
+
+### 1.4.1 Trigger
+
+以控件的属性作为触发条件：
 
 ```XAML
 <Style TargetType="{x:Type Button}" x:Key="ButtonStyle">
     <Setter Property="Width" Value="60"/>
+    <Setter Property="Height" Value="30"/>
+    
     <Style.Triggers>
+        <!-- 鼠标悬停时改变宽度 -->
         <Trigger Property="IsMouseOver" Value="True">
             <Setter Property="Width" Value="80"/>
+            <Setter Property="Background" Value="LightBlue"/>
+        </Trigger>
+        
+        <!-- 按钮被按下时改变背景 -->
+        <Trigger Property="IsPressed" Value="True">
+            <Setter Property="Background" Value="DarkBlue"/>
         </Trigger>
     </Style.Triggers>
 </Style>
 ```
 
-WPF定义了五种Trigger来作为触发条件，分别是：Trigger，DataTrigger，MultiTrigger，MultiDataTrigger，EventTrigger，他们的触发条件分别是：
+### 1.4.2 DataTrigger
 
-> Trigger：以控件的属性作为触发条件，如前面的IsMouseOver为True的时候触发。
->
-> DataTrigger：以控件DataContext的属性作为触发条件。
->
-> MultiTrigger：以控件的多个属性作为触发条件。
->
-> MultiDataTrigger：以控件DataContext的多个属性作为触发条件。
->
-> EventTrigger：以RoutedEvent作为触发条件，当指定的路由事件Raise时触发。
-
-# Implicit Style
-
-上面的例子中，都是使用StaticResource来设置Style的，当然，你也可以使用DynamicResource来设置Style。这两种方式都需要你在XAML或者后台代码中手动注明，为了使用方便，WPF提出了隐式（Implicit） Style的方式允许自动设置Style到控件，如：
+以控件 `DataContext` 的属性作为触发条件：
 
 ```XAML
-<Window>
+<Style TargetType="{x:Type Button}" x:Key="DataTriggerStyle">
+    <Style.Triggers>
+        <DataTrigger Binding="{Binding IsEnabled}" Value="False">
+            <Setter Property="Opacity" Value="0.5"/>
+        </DataTrigger>
+    </Style.Triggers>
+</Style>
+```
+
+### 1.4.3 MultiTrigger
+
+以控件的多个属性作为触发条件（所有条件都满足时才触发）：
+
+```XAML
+<Style TargetType="{x:Type Button}" x:Key="MultiTriggerStyle">
+    <Style.Triggers>
+        <MultiTrigger>
+            <MultiTrigger.Conditions>
+                <Condition Property="IsMouseOver" Value="True"/>
+                <Condition Property="IsEnabled" Value="True"/>
+            </MultiTrigger.Conditions>
+            <Setter Property="Background" Value="LightGreen"/>
+        </MultiTrigger>
+    </Style.Triggers>
+</Style>
+```
+
+### 1.4.4 MultiDataTrigger
+
+以控件 `DataContext` 的多个属性作为触发条件：
+
+```XAML
+<Style TargetType="{x:Type Button}" x:Key="MultiDataTriggerStyle">
+    <Style.Triggers>
+        <MultiDataTrigger>
+            <MultiDataTrigger.Conditions>
+                <Condition Binding="{Binding IsActive}" Value="True"/>
+                <Condition Binding="{Binding IsVisible}" Value="True"/>
+            </MultiDataTrigger.Conditions>
+            <Setter Property="Background" Value="Green"/>
+        </MultiDataTrigger>
+    </Style.Triggers>
+</Style>
+```
+
+### 1.4.5 EventTrigger
+
+以路由事件（RoutedEvent）作为触发条件，通常用于动画：
+
+```XAML
+<Style TargetType="{x:Type Button}" x:Key="EventTriggerStyle">
+    <Style.Triggers>
+        <EventTrigger RoutedEvent="MouseEnter">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                                     From="1.0" To="0.5" Duration="0:0:0.3"/>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="MouseLeave">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                                     From="0.5" To="1.0" Duration="0:0:0.3"/>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Style.Triggers>
+</Style>
+```
+
+### 触发器类型对比
+
+| 触发器类型 | 触发条件 | 使用场景 |
+|----------|---------|---------|
+| **Trigger** | 控件属性 | 鼠标悬停、按钮状态等 UI 交互 |
+| **DataTrigger** | DataContext 属性 | 数据绑定状态变化 |
+| **MultiTrigger** | 多个控件属性 | 需要多个条件同时满足 |
+| **MultiDataTrigger** | 多个 DataContext 属性 | 数据绑定的复杂条件判断 |
+| **EventTrigger** | 路由事件 | 动画效果、事件响应 |
+
+## 1.5 隐式样式（Implicit Style）
+
+前面的例子中，都是使用 `StaticResource` 或 `DynamicResource` 来显式设置 Style。为了使用方便，WPF 提供了隐式样式（Implicit Style）机制，允许自动将样式应用到指定类型的所有控件。
+
+### 1.5.1 隐式样式定义
+
+隐式样式与显式样式的区别在于**不指定 `x:Key`**：
+
+```XAML
+<Window x:Class="WpfApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.Resources>
+            <!-- 隐式样式：没有 x:Key，只有 TargetType -->
             <Style TargetType="{x:Type Button}">
-                <Setter Property="Height" Value="22"/>
-                <Setter Property="Width" Value="60"/>
+                <Setter Property="Height" Value="30"/>
+                <Setter Property="Width" Value="100"/>
+                <Setter Property="Margin" Value="5"/>
+                <Setter Property="Background" Value="LightBlue"/>
             </Style>
         </Grid.Resources>
-        <Button x:Name="button1" Style="{x:Null}"/>
-        <Button x:Name="button2" Margin="156,144,286,145" />
-        <Button x:Name="button3" Margin="196,144,0,145" />
+        
+        <!-- 这些 Button 会自动应用上面的隐式样式 -->
+        <Button Content="按钮1"/>
+        <Button Content="按钮2"/>
+        <Button Content="按钮3"/>
+        
+        <!-- 如果显式设置了 Style，隐式样式不会生效 -->
+        <Button Content="按钮4" Style="{x:Null}"/>
     </Grid>
 </Window>
 ```
 
-在Gird的Resource中定义Style时，没有给Style起名字（Key），这个Style会自动应用在Grid的所有子Button中，如果像button1一样在Button中显式定义了Style（这里设置了一个空值Null），那么这种隐式（Implicit）的Style会不起作用。
+### 1.5.2 隐式样式的工作原理
 
-# 深入Style
+- ✅ **自动应用**：隐式样式会自动应用到指定类型的所有控件
+- ✅ **无需手动指定**：不需要在每个控件上使用 `Style="{StaticResource ...}"`
+- ⚠️ **优先级**：如果控件显式设置了 `Style` 属性（即使是 `{x:Null}`），隐式样式不会生效
+- ⚠️ **作用域**：隐式样式遵循资源查找的**就近原则**，子元素优先使用最近的资源字典中的样式
 
-Style是一个不错的概念，作为一个Presentation的框架，把UI对象的结构，样式和行为分离这是一种很好的设计。Style也比较容易上手，像它的隐式（Implicit）Style的设计也是水到渠成的想法，但实际使用中也会出现一些问题。这些问题在WPF中也会经常遇见：概念不错，描述简单，前景美好，Bug稀奇古怪，要把这些问题说清楚，就要从根本来看，Style是个什么东西？
-
-按照通常的想法，Style应该类似于一个Dictionary&lt;string, object&gt; setters，预存了属性的名字和预设值，然后作用到UI对象上。WPF在Style处的想法很多，围绕着几个关键技术也加入了很多功能，详细的介绍一下：
-
-# Style & Dependency Property
-
-Dependency Property（简称DP）是WPF的核心，Style就是基于Dependency Property的，关于DP的内幕，请参见深入WPF--依赖属性。Style中的Setter就是作用在DP上的，如果你在控件中定义了一个CLR属性，Style是不能设置的。Dependency Property设计的精髓在于把字段的存取和对象（Dependency Object）剥离开，一个属性值内部用多个字段来存储，根据取值条件的优先级来决定当前属性应该取哪个字段。
-
-Dependency Property取值条件的优先级是（从上到下优先级从低到高）：
-
-```C#
- public enum BaseValueSource
- {
-     Unknown,
-     Default,
-     Inherited,
-     DefaultStyle,
-     DefaultStyleTrigger,
-     Style,
-     TemplateTrigger,
-     StyleTrigger,
-     ImplicitStyleReference,
-     ParentTemplate,
-     ParentTemplateTrigger,
-     Local
- }
-```
-
-对于一个具体例子来说：
+### 1.5.3 StaticResource vs DynamicResource
 
 ```XAML
-<Window>
+<!-- StaticResource：静态资源，编译时解析 -->
+<Button Style="{StaticResource ButtonStyle}"/>
+
+<!-- DynamicResource：动态资源，运行时解析，支持资源替换 -->
+<Button Style="{DynamicResource ButtonStyle}"/>
+```
+
+**区别**：
+- **StaticResource**：性能更好，但资源必须在编译时存在
+- **DynamicResource**：支持运行时替换资源，适合换肤场景
+
+# 二、样式系统深入解析
+
+Style 是一个优秀的概念，作为 Presentation 框架，将 UI 对象的结构、样式和行为分离是一种很好的设计。Style 比较容易上手，但实际使用中也会遇到一些问题。要理解这些问题，需要深入了解 Style 的本质和实现机制。
+
+从概念上讲，Style 类似于一个 `Dictionary<string, object>`，预存了属性的名字和预设值，然后作用到 UI 对象上。WPF 在 Style 的设计上围绕几个关键技术加入了很多功能，下面详细介绍：
+
+## 2.1 样式与依赖属性（Dependency Property）
+
+**依赖属性（Dependency Property，简称 DP）**是 WPF 的核心，Style 就是基于依赖属性的。
+
+### 关键要点
+
+- ✅ **Style 只能设置依赖属性**：Style 中的 `Setter` 只能作用于依赖属性，不能设置普通的 CLR 属性
+- ✅ **属性值优先级**：依赖属性设计的精髓在于将字段的存取和对象（DependencyObject）剥离开，一个属性值内部用多个字段来存储，根据取值条件的优先级来决定当前属性应该取哪个字段
+- ⚠️ **CLR 属性限制**：如果你在控件中定义了一个 CLR 属性，Style 是无法设置的
+
+### 依赖属性值优先级
+
+依赖属性取值条件的优先级（从低到高）：
+
+```C#
+public enum BaseValueSource
+{
+    Unknown,              // 未知来源
+    Default,              // 默认值
+    Inherited,            // 继承值
+    DefaultStyle,         // 默认样式（ThemeStyle）
+    DefaultStyleTrigger,   // 默认样式触发器
+    Style,                // 显式样式
+    TemplateTrigger,      // 模板触发器
+    StyleTrigger,         // 样式触发器
+    ImplicitStyleReference, // 隐式样式引用
+    ParentTemplate,       // 父模板
+    ParentTemplateTrigger, // 父模板触发器
+    Local                 // 本地值（最高优先级）
+}
+```
+
+### 优先级示例
+
+```XAML
+<Window x:Class="WpfApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="450" Width="800">
     <Window.Resources>
         <Style TargetType="{x:Type Button}" x:Key="ButtonStyle">
+            <!-- Style 优先级：设置 Width=60 -->
             <Setter Property="Width" Value="60"/>
+            
             <Style.Triggers>
+                <!-- StyleTrigger 优先级：鼠标悬停时 Width=80 -->
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Width" Value="80"/>
                 </Trigger>
             </Style.Triggers>
         </Style>
     </Window.Resources>
+    
     <Grid>
-        <Button x:Name="button1" Style="{StaticResource ButtonStyle}" Background="{DynamicResource brush}" Width="20"/>
+        <!-- Local 优先级（最高）：Width=20 会覆盖 Style 和 StyleTrigger -->
+        <Button x:Name="button1" 
+                Style="{StaticResource ButtonStyle}" 
+                Width="20"/>
     </Grid>
 </Window>
 ```
 
-第4行用Style的Setter设置Width=60，这个优先级是Style；第6行当IsMouseOver为True时设置Width=80，这个优先级是StyleTrigger；第13行使用Style的Button定义Width=20，这个优先级是Local。Local具有最高的优先级，所以即使鼠标移到Button上，第6行的Trigger也会因为优先级不够高而不起作用。如果去掉了第13行中的Width=20，那么鼠标移到Button上时Width会变为80，鼠标移开后会回到第4行的设置的60来。
+**说明**：
+- 第 4 行：Style 优先级设置 `Width=60`
+- 第 7 行：StyleTrigger 优先级，当 `IsMouseOver=True` 时设置 `Width=80`
+- 第 15 行：Local 优先级设置 `Width=20`（最高优先级）
 
-# Style & FrameworkElement
+由于 Local 优先级最高，即使鼠标移到 Button 上，StyleTrigger 也不会生效。如果移除第 15 行的 `Width="20"`，那么鼠标悬停时 Width 会变为 80，移开后恢复为 60。
+
+## 2.2 Style & FrameworkElement
 
 Style作为一个属性定义在FrameworkElement上，所有继承自FrameworkElement的控件都可以使用Style。FrameworkElement定义了多个Style：Style，ThemeStyle，FocusVisualStyle：
 
@@ -205,7 +409,7 @@ string relativePackUriForResources = "/" +
         colorScheme + ".xaml";
 ```
 
-# Style & ResourceDictionary
+## 2.3 Style & ResourceDictionary
 
 前面提到了很多次ResourceDictionary，关于WPF的Resource系统，以后再来细谈。WPF的Resource系统使用ResourceDictionary来储存Resource，ResourceDictionary，顾名思义，也是一个Dictionary，既然是Dictionary，就是按键/值对来存储的。我们最前面在Window的Resource中创建Style时，指定了Style对应的键值（x:Key），后面又用StaticResource来引用这个键值。
 
@@ -246,7 +450,7 @@ Appliation以及FrameworkElement类都定义了Resources属性，内部都持有
 
 Window和StackPanel的Resources中都分别定义了toggleBtnStyle以及隐式Style（Button），根据就近原则，StackPanel内部的ToggleButton和Button会应用StackPanel的Resource而不会使用Window的。
 
-# Style Merge
+# 三、Style Merge
 
 这里要提到本篇的重点也是不被人注意却经常出错的地方，Style的合并（Merge）。
 
@@ -335,13 +539,13 @@ static MyButton()
 
 这些问题都需要通过Style的BasedOn来解决，因为BasedOn用的是静态引用（StaticResource），当隐式Style发生变化时就有麻烦了。
 
-# 换肤
+# 四、换肤
 
 UI程序的换肤是很炫的玩意，换肤分两种：1，更换整个控件的Style；2，更换Style中的颜色画刷（Brush）。后者的实现很简单，定义好颜色画刷的资源文件（ResourceDictionary），使用画刷的时候使用DynamicResource绑定，换肤的时候替换画刷的资源文件就可以了。
 
 很多公司都有自己皮肤库，这些皮肤库一般都是隐式的Style，定义了所有控件的隐式Style，使用时把这个皮肤资源Merge到Application的Resources中。换肤时把旧的皮肤资源从Application的Resources中删除，替换成新的皮肤资源ResourceDictionary。
 
-这种做法很好理解，但是碰到Style的BasedOn属性就不起作用了，BasedOn属性使用是StaticResource，是静态的一次性的。新的皮肤库被添加到Application资源文件后，如果在Application的资源文件中已经定义过&lt;Style TargetType=“{x:Type Button}” BasedOn=“{StaticResource {x:Type Button}}”/&gt;这样隐式的Style，控件是不会更新皮肤的。如果有这方面的需求，需要手动合并（Merge）Style来解决问题，类似：
+这种做法很好理解，但是碰到 Style 的 `BasedOn` 属性就不起作用了。`BasedOn` 属性使用 `StaticResource`，是静态的一次性的。新的皮肤库被添加到 Application 资源文件后，如果在 Application 的资源文件中已经定义过 `<Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}"/>` 这样隐式的 Style，控件是不会更新皮肤的。如果有这方面的需求，需要手动合并（Merge）Style 来解决问题，类似：
 
 ```C#
 public static void Merge(this Style style, Style otherStyle)
@@ -392,4 +596,47 @@ private static void OnAutoMergeStyleChanged(DependencyObject d, DependencyProper
 }
 ```
 
-SetResourceReference是XAML中DynamicResource的代码表示，相当于Behavior.BaseOnStyle={DynamicResource type}。对控件使用SetResourceReference，监听的键值是type，监听的属性是一个我们自定义的附加属性BaseOnStyleProperty。当换肤替换Application的资源文件时，BaseOnStyle属性被更新，在BaseOnStyleProperty的Changed事件中可以读取控件的Style属性和新的ThemeStyle，调用Merge方法Merge两者然后再设置到控件的Style属性上。
+`SetResourceReference` 是 XAML 中 `DynamicResource` 的代码表示，相当于 `Behavior.BaseOnStyle={DynamicResource type}`。对控件使用 `SetResourceReference`，监听的键值是 `type`，监听的属性是一个自定义的附加属性 `BaseOnStyleProperty`。当换肤替换 Application 的资源文件时，`BaseOnStyle` 属性被更新，在 `BaseOnStyleProperty` 的 `Changed` 事件中可以读取控件的 `Style` 属性和新的 `ThemeStyle`，调用 `Merge` 方法合并两者然后再设置到控件的 `Style` 属性上。
+
+# 五、最佳实践
+
+## 5.1 样式组织建议
+
+- ✅ **集中管理**：将样式定义在 `App.xaml` 或独立的资源字典文件中
+- ✅ **命名规范**：使用清晰的命名，如 `ButtonStyle`、`PrimaryButtonStyle` 等
+- ✅ **分层设计**：基础样式 → 主题样式 → 特定样式
+- ✅ **使用 BasedOn**：通过 `BasedOn` 属性实现样式继承，避免重复定义
+
+## 5.2 性能优化
+
+- ✅ **优先使用 StaticResource**：除非需要动态替换，否则使用 `StaticResource`
+- ✅ **避免过度嵌套**：样式继承层级不宜过深
+- ✅ **合理使用触发器**：触发器会增加性能开销，避免过度使用
+
+## 5.3 常见陷阱
+
+- ⚠️ **隐式样式不继承**：基类控件的隐式样式不会自动应用到派生类控件
+- ⚠️ **BasedOn 只支持 StaticResource**：`BasedOn` 属性不支持 `DynamicResource`
+- ⚠️ **样式密封机制**：样式合并后会被密封，无法动态修改
+- ⚠️ **优先级理解**：Local 值优先级最高，会覆盖所有样式设置
+
+# 六、总结
+
+WPF 样式系统是一个强大而灵活的机制，通过本文的介绍，我们了解了：
+
+1. ✅ **样式基础**：Setter、EventSetter、Trigger 等基本元素
+2. ✅ **隐式样式**：自动应用到指定类型控件的样式机制
+3. ✅ **依赖属性**：样式只能作用于依赖属性，理解属性值优先级
+4. ✅ **样式合并**：ThemeStyle、显式样式、隐式样式的合并规则
+5. ✅ **样式继承**：通过 `BasedOn` 实现样式继承和扩展
+6. ✅ **换肤实现**：动态替换样式资源实现主题切换
+
+掌握这些知识，可以帮助您更好地使用 WPF 样式系统，构建统一、美观、易维护的用户界面。
+
+# 七、相关参考
+
+- [WPF 样式和模板概述](https://learn.microsoft.com/zh-cn/dotnet/desktop/wpf/controls/styles-templates-overview)
+- [WPF 依赖属性概述](https://learn.microsoft.com/zh-cn/dotnet/desktop/wpf/properties/dependency-properties-overview)
+- [WPF 资源概述](https://learn.microsoft.com/zh-cn/dotnet/desktop/wpf/advanced/resources-wpf)
+- [WPF 触发器概述](https://learn.microsoft.com/zh-cn/dotnet/desktop/wpf/controls/triggers-overview)
+- [WPF 控件创作概述](https://learn.microsoft.com/zh-cn/dotnet/desktop/wpf/controls/control-authoring-overview)

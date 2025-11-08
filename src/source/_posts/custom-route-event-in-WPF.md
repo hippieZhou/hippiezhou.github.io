@@ -6,7 +6,9 @@ updated: 2017-11-28 21:37:04
 tags: WPF
 ---
 
-# 示例代码
+> 在 WPF 中，路由事件是一种强大的事件机制，允许事件在元素树中向上或向下传播。本文介绍如何在 WPF 中创建自定义路由事件，包括事件注册、CLR 访问器和事件触发方法。
+
+# 一、示例代码
 
 ```C#
 public class MyButtonSimple: Button
@@ -57,7 +59,7 @@ public class MyButtonSimple: Button
 </Window>
 ```
 
-# 相关参考
+# 二、相关参考
 
 [https://docs.microsoft.com/zh-cn/dotnet/framework/wpf/advanced/how-to-create-a-custom-routed-event](https://docs.microsoft.com/zh-cn/dotnet/framework/wpf/advanced/how-to-create-a-custom-routed-event)
 

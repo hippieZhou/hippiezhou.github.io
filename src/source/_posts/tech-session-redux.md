@@ -6,11 +6,13 @@ updated: 2022-03-19 21:34:34
 tags: Redux
 ---
 
-# 什么是 Redux
+> Redux 是一个可预测的状态容器，用于 JavaScript 应用。它解决了 React 应用中数据共享和组件通信的问题，提供了一套标准且严格的状态管理方案。本文介绍 Redux 的核心概念、工作原理和使用方法。
+
+# 一、什么是 Redux
 
 这里借用官方的一句描述： A Predictable State Container for JS Apps 。其本质就是一个状态管理的扩展包，由 Facebook 于 2015 年提出并开源，类似 Vue 生态下的 vuex。它本身和 React 没有直接关系，只是在 React 生态的长期发展过程中，Redux 赢得了开发者的喜爱，并且和 React 师出同门，可能是最受欢迎的状态管理包。
 
-# 解决什么问题
+# 二、解决什么问题
 
 React 的推出大大提高了前端程序员的开发效率。其组件化的设计思想，高效的 JSX 语法，以及活跃的技术社区，迅速让 React 成为当年的前端热门框架。但是由于其本身只是采用虚拟 DOM 的方式来构建前端界面，所以对于企业级应用中组件之间如何交互，并没有提供一套完整的解决方案，其中最核心的两个问题是：
 
@@ -19,7 +21,7 @@ React 的推出大大提高了前端程序员的开发效率。其组件化的�
 
 为了解决上述问题，Facebook 官方推出了 Redux，提供了一套标准且严格的状态管理方案，为企业级的应用开发注入了新的 Buff。
 
-# 技术架构
+# 三、技术架构
 
 在谈论 Redux 的技术架构前，我们需要先了解一些周边知识，方便我们对 Redux 的核心思想有更深一步的理解。
 
@@ -62,7 +64,7 @@ Redux 是基于单向数据流（**one-way data flow**）的，如下图所示�
 - Selector
   - 定义了一系列方便组件使用的扩展方法
 
-# 如何使用
+# 四、如何使用
 
 通过展示一个示例，我们将一个函数组件的功能改为使用 Redux 来实现
 
@@ -297,7 +299,7 @@ export default CounterModule;
 
 ![reduxdataflowdiagram](/images/tech-session-redux/reduxdataflowdiagram.gif)
 
-# 优缺点和适用场景
+# 五、优缺点和适用场景
 
 - 优点
   - **Predictable：**可预测的（践行纯函数的思想，不变性）

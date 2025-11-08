@@ -1,8 +1,8 @@
 ---
 title: ASP.NET Core 环境变量大小写敏感性问题解析
 title_en: Understanding ASP.NET Core Environment Variable Case Sensitivity Issues
-date: 2025-11-08 12:53:17
-updated: 2025-11-08 12:53:17
+date: 2025-08-10 12:53:17
+updated: 2025-08-10 12:53:17
 tags: ASP.NET Core, Configuration, Environment Variables, Kubernetes
 ---
 

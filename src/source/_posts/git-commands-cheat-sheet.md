@@ -6,7 +6,9 @@ updated: 2022-02-27 20:55:55
 tags: Git
 ---
 
-# Handbook
+> Git 常用命令速查表，包括仓库初始化、提交、分支管理、远程操作等常用命令，以及常见问题的解决方案。
+
+# 一、常用命令
 
 ```bash
 # Initialize a new git repository:
@@ -94,13 +96,13 @@ git stash apply
 git fetch --all --prune
 ```
 
-# Use Git like a pro.
+# 二、使用技巧
 
 ![Use Git like a pro.](/images/git-commands-cheat-sheet/GYZ96EYasAA3GOf.jpg)
 
-# Errors
+# 三、常见问题
 
-## Fix "ssh: connect to host github.com port 22: Connection timed out"
+## 3.1 修复 SSH 连接超时问题
 
 try to create or update `~/.ssh/config` as followed:
 
@@ -112,7 +114,7 @@ Host github.com
 
 Then, run the command `ssh -T git@github.com` to confirm if the issue is fixed.
 
-## Cannot fetch all remote branchs
+## 3.2 无法获取所有远程分支
 
 try to open your git config by `git config -e (--global)`, and then modify relevant configuration:
 
@@ -124,7 +126,7 @@ try to open your git config by `git config -e (--global)`, and then modify relev
 
 after that, you can run `git fetch --all`.
 
-## Generate or apply patch file
+## 3.3 生成或应用补丁文件
 
 ```bash
 # Creating a patch from unstaged changes

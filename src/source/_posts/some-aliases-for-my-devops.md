@@ -8,17 +8,17 @@ tags: devops
 
 > 本文介绍我在日常开发和运维中常用的终端工具配置与别名，包括 Vim、PowerShell、Bash/WSL 等。
 
-# TL;DR
+# 一、快速总结
 
 - 快速总结各终端工具的高效配置和常用 alias。
 
-# PowerShell 配置
+# 二、PowerShell 配置
 
 - profile 配置方法
 - 常用 alias 和函数
 - 推荐模块（如 oh-my-posh）
 
-# Bash/WSL 配置
+# 三、Bash/WSL 配置
 
 - .bashrc/.bash_profile 配置
 
@@ -76,7 +76,7 @@ alias kuc='k config use-context'
 
 - WSL 下的特殊配置建议
 
-# Vim 配置
+# 四、Vim 配置
 
 - 常用配置项（如 .vimrc）
 
@@ -97,12 +97,12 @@ GG: End of file
 - 插件推荐与管理
 - 常用快捷键和自定义命令
 
-# 终端美化与效率提升
+# 五、终端美化与效率提升
 
 - 主题与配色方案
 - 字体与终端模拟器推荐
 - 提升效率的小技巧
 
-# 相关参考
+# 六、相关参考
 
 - 官方文档与社区资源链接

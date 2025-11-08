@@ -223,18 +223,18 @@ public partial class MainViewModel : ObservableObject
         Items = new IncrementalLoadingCollection<PeopleSource, Person>(new PeopleSource());
     }
 
-    [RelayCommand]
+[RelayCommand]
     private async Task LoadMoreItemsAsync()
-    {
+{
         if (Items != null && !Items.IsLoading && Items.HasMoreItems)
-        {
-            await Items.LoadMoreItemsAsync(10);
-        }
-    }
-
-    [RelayCommand]
-    private void OnItemInvoked(ItemsViewItemInvokedEventArgs invokedItem)
     {
+        await Items.LoadMoreItemsAsync(10);
+    }
+}
+
+[RelayCommand]
+private void OnItemInvoked(ItemsViewItemInvokedEventArgs invokedItem)
+{
         if (invokedItem.InvokedItem is Person selectedPerson)
         {
             // 处理项目点击事件
@@ -394,7 +394,7 @@ public class IncrementalLoadingBehavior : Behavior<ItemsView>
         </i:Interaction.Behaviors>
         
         <ItemsView.ItemTemplate>
-            <DataTemplate x:DataType="local:Person">
+        	<DataTemplate x:DataType="local:Person">
                 <ItemContainer>
                     <Border 
                         Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"

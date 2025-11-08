@@ -6,7 +6,9 @@ updated: 2017-05-16 21:37:04
 tags: WPF
 ---
 
-```XAML
+> 在 WPF 中实现自定义窗口缩放功能，通过 Grid 布局和 Rectangle 控件创建缩放区域，结合 Windows API 实现窗口的八个方向的缩放操作。
+
+# 一、XAML 布局
 <Window>
     AllowsTransparency="True"
     WindowState="Normal"
@@ -85,6 +87,8 @@ tags: WPF
     </Grid>
 </Window>
 ```
+
+# 二、C# 实现代码
 
 ```C#
 public enum ResizeDirection
