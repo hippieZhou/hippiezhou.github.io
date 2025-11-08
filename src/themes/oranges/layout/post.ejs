@@ -63,9 +63,18 @@
   <div class="container post-details" id="post-details">
     <div class="post-content">
       <div class="post-title">
-        <% if (page.title_en || page['title_en']) { %>
+        <% 
+          // 访问 title_en 字段，支持多种访问方式
+          var titleEn = null;
+          if (page.title_en !== undefined && page.title_en !== null && page.title_en !== '') {
+            titleEn = page.title_en;
+          } else if (page['title_en'] !== undefined && page['title_en'] !== null && page['title_en'] !== '') {
+            titleEn = page['title_en'];
+          }
+        %>
+        <% if (titleEn) { %>
           <h1 class="post-title-main"><%- page.title %></h1>
-          <h2 class="post-title-sub"><%- page.title_en || page['title_en'] %></h2>
+          <h2 class="post-title-sub"><%- titleEn %></h2>
         <% } else { %>
           <h1 class="post-title-main"><%- page.title %></h1>
         <% } %>
