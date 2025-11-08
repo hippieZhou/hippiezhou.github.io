@@ -1,8 +1,8 @@
 ---
 title: 如何正确使用 Mock、Stub、Fake、Fixture 等测试名词
-title_en: How to Properly Use Testing Terms: Mock, Stub, Fake, and Fixture
-date: 2025-11-08 22:37:01
-updated: 2025-11-08 22:37:01
+title_en: "How to Properly Use Testing Terms: Mock, Stub, Fake, and Fixture"
+date: 2025-11-09 10:37:01
+updated: 2025-11-09 10:37:01
 tags: Testing, Unit Testing, Test Doubles
 ---
 
