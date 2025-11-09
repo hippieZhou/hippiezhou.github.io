@@ -84,7 +84,7 @@ navbar:
     path: /
     key: home
   - name: Archives
-    enable: true
+    enable: false
     path: /archives/
     key: archives
   - name: Categories
@@ -95,10 +95,14 @@ navbar:
     enable: true
     path: /tags/
     key: tags
-  - name: Friends
-    enable: false
-    path: /friends/
-    key: friends
+  - name: Products
+    enable: true
+    path: /products/
+    key: bookmarks
+  - name: Bookmarks
+    enable: true
+    path: /bookmarks/
+    key: bookmarks
   - name: About
     enable: true
     path: /about/
@@ -117,45 +121,15 @@ friends:
   # nickname: 昵称
   # site: 地址
   # meta: 描述
-  - nickname: nikiforovall
-    site: https://nikiforovall.github.io/
-    meta: .NET
   - nickname: Code With Mukesh
     site: https://codewithmukesh.com/
     meta: .NET
   - nickname: Scott Hanselman
     site: https://www.hanselman.com/
     meta: .NET
-  - nickname: Andrew KeepCoding
-    site: https://zenn.dev/andrewkeepcodin
-    meta: .NET
   - nickname: 左耳朵耗子
     site: https://coolshell.cn/
     meta:
-  - nickname: 月光博客
-    site: https://www.williamlong.info/
-    meta:
-  - nickname: Weichao Deng
-    site: https://juniperphoton.substack.com/
-    meta:
-  - nickname: Product Hunt
-    site: https://www.producthunt.com/
-    meta: Forum
-  - nickname: Crowdin
-    site: https://crowdin.com/
-    meta: Multilingual
-  - nickname: V2ex
-    site: https://www.v2ex.com/
-    meta: Forum
-  - nickname: [微零微]
-    site: https://jihuowin.com/index.php
-    meta:
-  - nickname: ihavenotv
-    site: https://ihavenotv.com/
-    meta: Documentaries
-  - nickname: 英文库
-    site: https://english.cool/
-    meta: English
 
 # 页脚信息
 footer:

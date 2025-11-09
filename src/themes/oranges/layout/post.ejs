@@ -58,6 +58,15 @@
     </div>
   <% } %>
 
+  <% if(page.type === "products") { %>
+  <!-- 产品页 url形式：https://yoursite/products/ -->
+    <div class="container products-index">
+      <div class="markdown-body">
+        <%- page.content %>
+      </div>
+    </div>
+  <% } %>
+
   <% if (!page.type) { %>
   <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
   <div class="container post-details" id="post-details">
