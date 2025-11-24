@@ -1,5 +1,5 @@
 ---
-title: Privacy Policy - Bing Gallery
+title: Privacy Policy - Binggo Wallpapers
 date: 2025-01-17 00:00:00
 updated: 2025-01-17 00:00:00
 type: "products"
@@ -82,9 +82,9 @@ type: "products"
 
 ## Introduction
 
-Bing Gallery ("we", "our", or "the app") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard information when you use our Windows application.
+Binggo Wallpapers ("we", "our", or "the app") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard information when you use our Windows application.
 
-> **Important:** Bing Gallery is an independent third-party application and is not affiliated with, endorsed by, or sponsored by Microsoft Corporation or Bing. All wallpaper content is sourced from Bing's public API.
+> **Important:** Binggo Wallpapers is an independent third-party application and is not affiliated with, endorsed by, or sponsored by Microsoft Corporation or Bing. All wallpaper content is sourced from Bing's public API.
 
 ## Information We Collect
 
@@ -203,14 +203,14 @@ This app complies with:
 
 If you have any questions or concerns about this Privacy Policy, please contact us:
 
-- **GitHub Issues:** [https://github.com/hippiezhou/BingWallpaperGallery/issues](https://github.com/hippiezhou/BingWallpaperGallery/issues)
-- **GitHub Discussions:** [https://github.com/hippiezhou/BingWallpaperGallery/discussions](https://github.com/hippiezhou/BingWallpaperGallery/discussions)
+- **GitHub Issues:** [https://github.com/hippiezhou/BinggoWallpapers/issues](https://github.com/hippiezhou/BinggoWallpapers/issues)
+- **GitHub Discussions:** [https://github.com/hippiezhou/BinggoWallpapers/discussions](https://github.com/hippiezhou/BinggoWallpapers/discussions)
 
 ## Open Source
 
 This app is open source. You can review the complete source code to verify our privacy practices:
 
-- **Repository:** [https://github.com/hippiezhou/BingWallpaperGallery](https://github.com/hippiezhou/BingWallpaperGallery)
+- **Repository:** [https://github.com/hippiezhou/BinggoWallpapers](https://github.com/hippiezhou/BinggoWallpapers)
 - **License:** MIT License
 
 ## 📋 Quick Summary
@@ -363,14 +363,14 @@ This app is open source. You can review the complete source code to verify our p
 
 如果您对本隐私策略有任何问题或疑虑，请联系我们：
 
-- **GitHub Issues：** [https://github.com/hippiezhou/BingWallpaperGallery/issues](https://github.com/hippiezhou/BingWallpaperGallery/issues)
-- **GitHub Discussions：** [https://github.com/hippiezhou/BingWallpaperGallery/discussions](https://github.com/hippiezhou/BingWallpaperGallery/discussions)
+- **GitHub Issues：** [https://github.com/hippiezhou/BinggoWallpapers/issues](https://github.com/hippiezhou/BinggoWallpapers/issues)
+- **GitHub Discussions：** [https://github.com/hippiezhou/BinggoWallpapers/discussions](https://github.com/hippiezhou/BinggoWallpapers/discussions)
 
 ## 开源
 
 本应用是开源的。您可以查看完整的源代码以验证我们的隐私实践：
 
-- **仓库：** [https://github.com/hippiezhou/BingWallpaperGallery](https://github.com/hippiezhou/BingWallpaperGallery)
+- **仓库：** [https://github.com/hippiezhou/BinggoWallpapers](https://github.com/hippiezhou/BinggoWallpapers)
 - **许可证：** MIT License
 
 ## 📋 快速摘要
@@ -395,7 +395,7 @@ This app is open source. You can review the complete source code to verify our p
 
 ---
 
-© 2025 Bing Gallery. All rights reserved.
+© 2025 Binggo Wallpapers. All rights reserved.
 
 This is an independent third-party application, not affiliated with Microsoft Corporation.
   </div>

@@ -1,5 +1,5 @@
 ---
-title: Bing Gallery - 每日精美壁纸
+title: Binggo Wallpapers - 每日精美壁纸
 date: 2025-01-17 00:00:00
 updated: 2025-01-17 00:00:00
 type: "products"
@@ -333,10 +333,10 @@ type: "products"
   <h1>每日精美壁纸</h1>
   <p>探索来自全球 14 个地区的必应每日壁纸<br>4K 分辨率 · 实时特效 · 隐私优先</p>
   <div class="cta-buttons">
-    <a href="https://github.com/hippiezhou/BingWallpaperGallery/releases" class="btn btn-primary" target="_blank">
+    <a href="https://github.com/hippiezhou/BinggoWallpapers/releases" class="btn btn-primary" target="_blank">
       <span>⬇️</span> 立即下载
     </a>
-    <a href="https://github.com/hippiezhou/BingWallpaperGallery" class="btn btn-secondary" target="_blank">
+    <a href="https://github.com/hippiezhou/BinggoWallpapers" class="btn btn-secondary" target="_blank">
       <span>⭐</span> GitHub
     </a>
   </div>
@@ -437,12 +437,12 @@ type: "products"
 
 <div class="open-source">
   <h2>🌟 开源项目</h2>
-  <p>Bing Gallery 是一个完全开源的项目<br>采用 MIT 许可证，欢迎贡献和审查代码</p>
+  <p>Binggo Wallpapers 是一个完全开源的项目<br>采用 MIT 许可证，欢迎贡献和审查代码</p>
   <div class="cta-buttons">
-    <a href="https://github.com/hippiezhou/BingWallpaperGallery" class="btn btn-primary" target="_blank">
+    <a href="https://github.com/hippiezhou/BinggoWallpapers" class="btn btn-primary" target="_blank">
       <span>⭐</span> Star on GitHub
     </a>
-    <a href="https://github.com/hippiezhou/BingWallpaperGallery/issues" class="btn btn-secondary" target="_blank">
+    <a href="https://github.com/hippiezhou/BinggoWallpapers/issues" class="btn btn-secondary" target="_blank">
       <span>💬</span> 反馈问题
     </a>
   </div>
@@ -451,15 +451,15 @@ type: "products"
 ---
 
 <div class="footer-links">
-  <a href="https://github.com/hippiezhou/BingWallpaperGallery" target="_blank">项目主页</a>
-  <a href="https://github.com/hippiezhou/BingWallpaperGallery/releases" target="_blank">下载</a>
+  <a href="https://github.com/hippiezhou/BinggoWallpapers" target="_blank">项目主页</a>
+  <a href="https://github.com/hippiezhou/BinggoWallpapers/releases" target="_blank">下载</a>
   <a href="privacy-policy">隐私策略</a>
-  <a href="https://github.com/hippiezhou/BingWallpaperGallery/issues" target="_blank">问题反馈</a>
-  <a href="https://github.com/hippiezhou/BingWallpaperGallery/discussions" target="_blank">讨论区</a>
+  <a href="https://github.com/hippiezhou/BinggoWallpapers/issues" target="_blank">问题反馈</a>
+  <a href="https://github.com/hippiezhou/BinggoWallpapers/discussions" target="_blank">讨论区</a>
 </div>
 
 <p style="text-align: center; color: var(--color-text-sub); font-size: 1.4rem; line-height: 2; margin-top: 20px;">
-  © 2025 Bing Gallery. All rights reserved.<br>
+  © 2025 Binggo Wallpapers. All rights reserved.<br>
   独立第三方应用，与微软公司无关联关系。
 </p>
 

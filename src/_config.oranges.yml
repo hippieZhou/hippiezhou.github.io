@@ -100,7 +100,7 @@ navbar:
     path: /products/
     key: bookmarks
   - name: Bookmarks
-    enable: true
+    enable: false
     path: /bookmarks/
     key: bookmarks
   - name: About
