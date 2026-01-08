@@ -333,7 +333,7 @@ type: "products"
   <h1>每日精美壁纸</h1>
   <p>探索来自全球 14 个地区的必应每日壁纸<br>4K 分辨率 · 实时特效 · 隐私优先</p>
   <div class="cta-buttons">
-    <a href="https://github.com/hippiezhou/BinggoWallpapers/releases" class="btn btn-primary" target="_blank">
+    <a href="https://apps.microsoft.com/detail/9ph6t26g23xh?referrer=appbadge&mode=direct" class="btn btn-primary" target="_blank">
       <span>⬇️</span> 立即下载
     </a>
     <a href="https://github.com/hippiezhou/BinggoWallpapers" class="btn btn-secondary" target="_blank">
@@ -452,7 +452,7 @@ type: "products"
 
 <div class="footer-links">
   <a href="https://github.com/hippiezhou/BinggoWallpapers" target="_blank">项目主页</a>
-  <a href="https://github.com/hippiezhou/BinggoWallpapers/releases" target="_blank">下载</a>
+  <a href="https://apps.microsoft.com/detail/9ph6t26g23xh?referrer=appbadge&mode=direct" target="_blank">下载</a>
   <a href="privacy-policy">隐私策略</a>
   <a href="https://github.com/hippiezhou/BinggoWallpapers/issues" target="_blank">问题反馈</a>
   <a href="https://github.com/hippiezhou/BinggoWallpapers/discussions" target="_blank">讨论区</a>
