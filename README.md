@@ -18,14 +18,20 @@
 git clone https://github.com/hippieZhou/hippiezhou.github.io.git
 cd hippiezhou.github.io
 
-# 2. 安装依赖（需要 Node.js 20.x）
+# 2. 使用 nvm 切换到指定 Node.js 版本（推荐）
+nvm use
+# 或者手动指定版本
+# nvm install 20.17.0
+# nvm use 20.17.0
+
+# 3. 安装依赖（需要 Node.js 20.x）
 cd src
 npm install
 
-# 3. 初始化主题子模块
+# 4. 初始化主题子模块
 git submodule update --init --recursive
 
-# 4. 启动开发服务器
+# 5. 启动开发服务器
 npm run server
 # 访问 http://localhost:4000
 ```

@@ -105,6 +105,12 @@ Anyang Normal University | 2012 – 2016
 
 ---
 
+## 🏆 Certifications
+
+<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="d2ec554e-fd68-48e0-a70f-03646ca811a5" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+
+---
+
 ## 🚀 Current Focus
 
 Currently working on **legacy application migration** projects, helping clients transition to **.NET 8** platform while achieving greater business value. Focus areas include:
