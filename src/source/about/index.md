@@ -8,7 +8,7 @@ type: "about"
 
 > Expert Backend & Desktop Application Developer | 9+ Years Experience | Specializing in .NET Technologies & DevOps
 
-Hi there! I'm a **creative developer** from China, currently working as a **Consultant** at **[Thoughtworks](https://www.thoughtworks.com/)**. With over **8 years** of experience in **.NET-related technologies**, I specialize in backend development, desktop applications, and DevOps practices. I enjoy turning complex problems into simple, elegant solutions and helping organizations modernize their legacy systems.
+Hi there! I'm a **creative developer** from China, currently working as a **Senior Consultant** at **[Thoughtworks](https://www.thoughtworks.com/)**. With over **10 years** of experience in **.NET-related technologies**, I specialize in backend development, desktop applications, and DevOps practices. I enjoy turning complex problems into simple, elegant solutions and helping organizations modernize their legacy systems.
 
 ---
 
@@ -17,6 +17,7 @@ Hi there! I'm a **creative developer** from China, currently working as a **Cons
 ### Consultant | Thoughtworks
 **Feb 2022 – Present**
 
+- Leveraging **AI** to help our clients build and uplift their team's delivery. 
 - Leading **legacy application migration** projects, transitioning systems to **.NET 8** platform
 - Building scalable and high-performance web applications using **ASP.NET Core**
 - Driving DevOps practices to improve deployment efficiency and system reliability
@@ -24,6 +25,7 @@ Hi there! I'm a **creative developer** from China, currently working as a **Cons
 - Applying **Domain-Driven Design (DDD)** and **Test-Driven Development (TDD)** principles
 
 **Key Achievements:**
+- Improve the team’s delivery capabilities and iteration quality by building workflows such as agents and agent skills
 - Successfully modernized legacy systems to .NET Core/.NET 8
 - Implemented microservices architecture with containerization (Docker & Kubernetes)
 - Established CI/CD pipelines using Azure DevOps, Buildkite, and GitHub Actions
